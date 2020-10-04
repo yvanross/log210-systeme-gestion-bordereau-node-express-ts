@@ -314,7 +314,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	 *
 	 * @apiParam {String} token Authentification token dans le header.
 	 *
-	 *  @apiSuccess (200) {String} json [ { id: 5,
+	 *  @apiSuccess (200) {JSON} data [ { id: 5,
 	    sigle: 'LOG430',
 	    nb_max_student: 5,
 	    groupe: '01',
@@ -335,7 +335,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	 * @apiParam {String} token Authentification token dans le header.
 	 *
 
-	 *  @apiSuccess (200) {String} json [ { id: 3,
+	 *  @apiSuccess (200) {JSON} data [ { id: 3,
     sigle: 'LOG210',
     nb_max_student: 5,
     groupe: '03',
@@ -372,7 +372,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	 * @apiParam {String} token Token d'authentification de l'enseignant dans le header.
    * @apiParam {Integer} :course id du cours .
 	 *
-	 *  @apiSuccess (200) {String} json [ { id: 2,
+	 *  @apiSuccess (200) {JSON} data [ { id: 2,
     first_name: 'firstname2',
     last_name: 'last_name2',
     email: 'student+2@gmail.com',

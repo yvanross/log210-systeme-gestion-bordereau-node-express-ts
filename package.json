@@ -4,14 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start2": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js & open http://localhost:3001",
         "start": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js & open http://127.0.0.1:3001",
+        "start2": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js & open http://localhost:3001",
         "test": "jest --coverage",
         "watch": "jest --coverage --watchAll",
-        "build": "gulp build",
+        "build": "npm run fix && gulp build",
         "docs": "apidoc -i src/routes/ -o dist/docs/",
         "open": "open http://127.0.0.1:3001",
-        "open2": "open http://localhost:3001"
+        "open2": "open http://localhost:3001",
+        "lint": "prettier --check .",
+        "fix": "prettier --write ."
     },
     "keywords": [],
     "author": "",
@@ -30,6 +32,7 @@
         "gulp": "^4.0.2",
         "gulp-typescript": "^5.0.1",
         "nyc": "^14.1.1",
+        "prettier": "2.1.2",
         "system-sleep": "^1.3.6",
         "testdouble": "^3.16.1",
         "testdouble-chai": "^0.5.0",

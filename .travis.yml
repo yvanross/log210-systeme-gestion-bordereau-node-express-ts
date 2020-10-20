@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - "stable"
+    - 'stable'
 script:
-  - npm test
+    - npm test
 after_script:
-  - npm run coverage:coveralls
+    - npm run coverage:coveralls

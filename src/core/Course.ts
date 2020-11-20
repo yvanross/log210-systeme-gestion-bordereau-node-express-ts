@@ -14,20 +14,19 @@ export class Course {
 
   static fromId(id:number){
     let   courses = require('../data/courses.json');
-		for( var course in courses){
-			if(courses[course].id == id){
-        return new this(
-          courses[course].id,
-          courses[course].sigle,
-          courses[course].nb_max_student,
-          courses[course].groupe,
-          courses[course].titre,
-          courses[course].date_debut,
-          courses[course].date_fin
+    let course = courses.find(element => element.id == id)
+    if (course == null)
+      throw new Error("Course id not found");
+
+    return  new Course(
+          course.id,
+          course.sigle,
+          course.nb_max_student,
+          course.groupe,
+          course.titre,
+          course.date_debut,
+          course.date_fin
         );
-			}
-    }
-     throw new Error("Course id not found");
   }
 
   static fromSigle(sigle: string): Course[] {

@@ -1,11 +1,12 @@
 import * as chai from 'chai';
 import chaiHttp = require('chai-http');
-// import { exception } from 'console';
 
 import app from '../src/App';
 import { Course } from '../src/core/Course';
 import * as md5 from 'md5';
 import { POINT_CONVERSION_UNCOMPRESSED } from 'constants';
+import { exception } from 'console';
+import * as Utils from '../src/core/Utils';
 // import md5 = require('md5');
 
 chai.use(chaiHttp);
@@ -15,10 +16,13 @@ describe('CourseTest', () => {
 
   it('fail to get Course by id', () => {
    expect(() => {Course.fromId(0);}).to.throw('Course id not found');
-    //  expect(new Teacher(1)).to.throw(ex);
+   
+   let ex  = new Error('Course id not found')
+   expect(()=>{Course.fromId(0);}).to.throw(ex.message);
+  //  expect(()=>{Course.fromId(0);}).to.throw(ex.name);
   });
 
-  it('create course by Id', () => {
+  it('get course by Id', () => {
     let course =  Course.fromId(1);
     expect(course.id()).to.equal(1);
     expect(course.sigle()).to.equal("LOG210");
@@ -29,6 +33,12 @@ describe('CourseTest', () => {
     expect(course.date_fin()).to.equal("2019-09-02");
   });
   
+
+  it('throw execption if id do not exist', () => {
+    expect(() => { Course.fromId(2000);}).to.throw('Course id not found');
+
+  });
+
   it('get course students',() => {
     let course =  Course.fromId(1);
     expect(course.students().length).to.equal(2);
@@ -42,4 +52,6 @@ describe('CourseTest', () => {
      expect(course_id_array.sort()).to.deep.equal([1,2,3,4].sort())
   })
 
+
+  
 });

@@ -1,0 +1,103 @@
+@startuml
+class Student {
+    -_id: number
+    -_first_name: string
+    -_last_name: string
+    -_email: string
+    -_permanent_code: string
+    +id(): number
+    +name(): string
+    +email(): string
+    +permanent_code(): string
+    +followCourse(course_id: number): boolean
+    +courses(): any[]
+    +{static} login(email: string, password: string): any
+    +{static} loginV2(email: string, password: string): any[]
+    +{static} fromId(id: number): Student
+    +{static} fromToken(token: string): Student
+}
+class Course {
+    -_id: number
+    -_sigle: string
+    -_nb_max_student: number
+    -_groupe: string
+    -_titre: string
+    -_date_debut: string
+    -_date_fin: string
+    +id(): number
+    +sigle(): string
+    +nb_max_student(): number
+    +groupe(): string
+    +titre(): string
+    +date_debut(): string
+    +date_fin(): string
+    +students(): any[]
+    +{static} fromId(id: number): Course
+    +{static} fromSigle(sigle: string): Course[]
+}
+class Teacher {
+    -_id: number
+    -_first_name: string
+    -_last_name: string
+    -_email: string
+    +id(): number
+    +name(): string
+    +email(): string
+    +giveCourse(course_id: number): boolean
+    +courses(): any[]
+    +{static} login(email: string, password: string): any
+    +{static} loginV2(email: string, password: string): any[]
+    +{static} fromId(id: number): Teacher
+    +{static} fromToken(token: string): Teacher
+}
+class Notes {
+    +multimap: any
+    +set(student_id: number, course_id: number, type: string, type_id: number, note: number): void
+    +student(student_id: number): any
+    +course(course_id: number): any[]
+    +clear(): void
+}
+class SgbController {
+    +multimap: any
+    +notes: Notes
+    +login(email: string, password: string): any
+    +loginV2(email: string, password: string): any[]
+    +courses(token: string): string
+    +students(token: string, course_id: number): string
+    +note(token: string, student_id: number, course_id: number, type: string, type_id: number, note: number): void
+    +studentNote(token: string, course: number, type: string, type_id: number, note: number): void
+    +studentNotes(token: string): any
+    +studentCourses(token: string): string
+    +courseNotes(token: string, course_id: number): any[]
+    +clearNotes(token: string): void
+}
+class SgbRouter {
+    +router: Router
+    +controller: SgbController
+    +router_latency: number
+    +courses(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +students(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +note(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +studentNote(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +studentNotes(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +studentCourses(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +courseNotes(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +login(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +clearNotes(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +latency(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +generate_latency(): void
+    +init(): void
+}
+class SgbRouterV2 {
+    +router: Router
+    +controller: SgbController
+    +router_latency: number
+    +login(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs>, res: Response<any>, next: NextFunction): void
+    +init(): void
+}
+class App {
+    +express: express.Application
+    -middleware(): void
+    -routes(): void
+}
+@enduml

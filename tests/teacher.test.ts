@@ -18,10 +18,6 @@ describe('TeacherTest', () => {
     // expect(new Teacher(1)).to.throw(ex);
   });
 
-  it('fail to create teacher by token', () => {
-    expect(() => {Teacher.fromToken(md5("invalidemail"));}).to.throw('Teacher token not found');
-     // expect(new Teacher(1)).to.throw(ex);
-   });
   
    
   it('get teacher by Id', () => {
@@ -39,7 +35,11 @@ describe('TeacherTest', () => {
     expect(teacher.email()).to.equal("teacher+1@gmail.com");
   });
   
-  it('get teacher courses', () => {
+  it('fail to create teacher by token', () => {
+    expect(() => {Teacher.fromToken(md5("invalidemail"));}).to.throw('Teacher token not found');
+   });
+   
+   it('get teacher courses', () => {
     let teacher =  Teacher.fromId(1);
     expect(teacher.courses().length).to.equal(2);
 	});

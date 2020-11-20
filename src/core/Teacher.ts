@@ -32,30 +32,28 @@ export class Teacher {
   
   static fromId(id:number){
     let  teachers = require('../data/teachers.json');
-		for( var teacher in teachers){
-			if(teachers[teacher].id == id){
-        return new this(
-          teachers[teacher].id,
-        teachers[teacher].first_name,
-        teachers[teacher].last_name,
-        teachers[teacher].email);
-			}
-    }
-     throw new Error("Teacher id not found");
+    let teacher = teachers.find(element => element.id == id);
+    if(teacher == null)
+      throw new Error("Teacher id not found");
+
+    return new Teacher(
+        teacher.id,
+        teacher.first_name,
+        teacher.last_name,
+        teacher.email);
   }
 
   static fromToken(token:string){
     let  teachers = require('../data/teachers.json');
-		for( var teacher in teachers){
-			if(md5(teachers[teacher].email) == token){
-        return new this(
-          teachers[teacher].id,
-        teachers[teacher].first_name,
-        teachers[teacher].last_name,
-        teachers[teacher].email);
-			}
-    }
-     throw new Error("Teacher token not found");
+    let teacher = teachers.find(element => md5(element.email) == token);
+    if(teacher == null)
+      throw new Error("Teacher token not found");
+
+	  return new Teacher(
+       teacher.id,
+       teacher.first_name,
+       teacher.last_name,
+       teacher.email);
   }
   constructor(
     id:number, 

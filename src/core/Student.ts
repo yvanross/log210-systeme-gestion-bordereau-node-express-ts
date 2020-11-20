@@ -33,17 +33,16 @@ export class Student {
   }
   static fromId(id:number){
     let  students = require('../data/students.json');
-		for( var student in students){
-			if(students[student].id == id){
-        return new this(
-          students[student].id,
-        students[student].first_name,
-        students[student].last_name,
-        students[student].email,
-        students[student].permanent_code);
-			}
-    }
-     throw new Error("Student id not found");
+    let student = students.find(element => element.id == id);
+    if(student == null)
+      throw new Error("Student id not found");
+
+    return new Student(
+        student.id,
+        student.first_name,
+        student.last_name,
+        student.email,
+        student.permanent_code);			
   }
 
   static fromToken(token:string){

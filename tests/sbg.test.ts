@@ -218,6 +218,7 @@ describe('course notes', () => {
 	it('responds with all notes for a course', async () => {
 		const res = await chai.request(app).get('/api/v1/course/2/notes')
 			.set('token', md5('teacher+3@gmail.com'))
+		
 		expect(res.status).to.equal(200);
 		expect(res).to.be.json;
 		let sortedData = res.body.data.sort((n1,n2) => n1.type_id - n2.type_id);

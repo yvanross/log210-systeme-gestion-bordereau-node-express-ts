@@ -276,7 +276,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	 this.router.get('/student/note', this.studentNote.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
 		
 	 /**
-	 * @api {put} /v1/note?student_id=student_id&course_id=course_id&type=type&type_id=type_id&note=note Enseignant ajouter une note à un étudiant
+	 * @api {post} /v1/note?student_id=student_id&course_id=course_id&type=type&type_id=type_id&note=note Enseignant ajouter une note à un étudiant
 	 * @apiGroup Enseignant
 	 * @apiDescription L'enseignant ajoute une note dans le dossier de l'étudiant
 	 * @apiVersion 1.0.0

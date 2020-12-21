@@ -1,5 +1,7 @@
 # Système de gestion des bordereau utilisé dans le cadre du cours de LOG210 et développé avec Node, Express et TypeScript
 
+[Voir la documentation en ligne](./dist/docs/index.html).  
+
 Ce système doit être utilisé pour obtenir l'information de base à la réalisation de votre laboratoire en LOG210. Il possède les qualités suivantes:
 
  - il est simple pour les débutants en LOG210
@@ -32,3 +34,4 @@ see https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0a
  http://127.0.0.1:3001/docs/index
  http://localhost:3001/docs/index
  
+

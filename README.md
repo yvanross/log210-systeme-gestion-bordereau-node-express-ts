@@ -1,6 +1,6 @@
 # Système de gestion des bordereau utilisé dans le cadre du cours de LOG210 et développé avec Node, Express et TypeScript
 
-[Voir la documentation en ligne](./dist/docs/index.html).  
+[Voir la documentation en ligne]( https://cc-yvanross.github.io/8e8addd727f14edfd8c50bd99633c611956f0439/dist/docs/index.html).  
 
 Ce système doit être utilisé pour obtenir l'information de base à la réalisation de votre laboratoire en LOG210. Il possède les qualités suivantes:
 

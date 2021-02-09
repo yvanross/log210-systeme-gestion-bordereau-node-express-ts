@@ -18,6 +18,7 @@ async function loginTeacher() {
 	chai.request(app).get('/api/v1/login?email=teacher%2B3%40gmail.com&password=1234')
 		.then(res => {
 			expect(res.body.token).to.eq(md5('teacher+3@gmail.com'))
+			expect('07e74791d927adb57bc6cd448aa7e34f').to.eq(md5('teacher+3@gmail.com'))
 		});
 }
 

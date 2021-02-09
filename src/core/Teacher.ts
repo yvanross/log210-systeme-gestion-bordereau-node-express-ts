@@ -55,6 +55,8 @@ export class Teacher {
         teachers[teacher].email);
 			}
     }
+    console.log("XXXXX");
+    console.log(token);
      throw new Error("Teacher token not found");
   }
   constructor(

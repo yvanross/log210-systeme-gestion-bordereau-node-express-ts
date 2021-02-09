@@ -25,7 +25,7 @@ export class SgbRouter {
 			let token = req.headers.token as string
 			// console.log("Token from header:", token);
 			let courses = this.controller.courses(token);
-			this.generate_latency();
+			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',
@@ -44,7 +44,7 @@ export class SgbRouter {
 			let token = req.headers.token as string
 			let course = parseInt(req.params.course) 
 			let data = this.controller.students(token,course);
-			this.generate_latency();
+			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',
@@ -91,7 +91,7 @@ export class SgbRouter {
 				req.query.type as string,
 				parseInt(req.query.type_id as string),
 				parseFloat(req.query.note as string));
-			this.generate_latency();
+			// this.generate_latency();
 
 
 			res.status(200)
@@ -113,7 +113,7 @@ export class SgbRouter {
 			let token = req.headers.token as string
 			let data = this.controller.studentNotes(token);
 			let sortedData = data.sort((n1,n2) => n1.course - n2.course);
-			this.generate_latency();
+			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',
@@ -132,7 +132,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 			let token = req.headers.token as string
 			let data = this.controller.studentCourses(token);
 
-			this.generate_latency();
+			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',
@@ -152,7 +152,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 			let course = parseInt(req.params.course)
 			// console.log("coursesNotes called with token", token, " and course ", course)
 			let data = this.controller.courseNotes(token,course);
-			this.generate_latency();
+			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',
@@ -171,7 +171,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 			// Invoquer l'opération système (du DSS) dans le contrôleur GRASP
 			let token = this.controller.login(email,password);
 			
-			this.generate_latency();
+			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',
@@ -205,7 +205,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	public latency(req: Request, res: Response, next: NextFunction) { 
 			this.router_latency = parseFloat(req.query.value as string);		// Invoquer l'opération système (du DSS) dans le contrôleur GRASP
 			// console.log("latency called with value of ", this.router_latency)
-			this.generate_latency()
+			// this.generate_latency()
 
 			res.status(200)
 			.send({
@@ -215,14 +215,15 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 			});
 	}
 
-	public generate_latency() {
-		var sleep = require('system-sleep');
-		let latency:number = this.router_latency
-		let random:number = Math.random()
-		let delay:number  = +(random * latency * 1000).toFixed();
-		// console.log("Use a latency of", delay, ' milliseconds')
-		sleep(delay)
-	}
+	// public generate_latency() {
+	// 	return;
+	// 	// var sleep = require('system-sleep');
+	// 	// let latency:number = this.router_latency
+	// 	// let random:number = Math.random()
+	// 	// let delay:number  = +(random * latency * 1000).toFixed();
+	// 	// // console.log("Use a latency of", delay, ' milliseconds')
+	// 	// sleep(delay)
+	// }
 
 	//apidoc -i src/routes/ -o docs/
 

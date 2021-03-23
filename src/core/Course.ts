@@ -14,6 +14,25 @@ export class Course {
 
   static fromId(id:number){
     let   courses = require('../data/courses.json');
+    const found = courses.find(element => element.id == id);
+   
+    if(found === undefined)
+      throw new Error("Course id not found");
+    
+    return new this(
+      found.id,
+      found.sigle,
+      found.nb_max_student,
+      found.groupe,
+      found.titre,
+      found.date_debut,
+      found.date_fin
+    );
+
+  }
+  
+  static fromId2(id:number){
+    let   courses = require('../data/courses.json');
 		for( var course in courses){
 			if(courses[course].id == id){
         return new this(
@@ -32,20 +51,22 @@ export class Course {
 
   static fromSigle(sigle: string): Course[] {
     let   courses = require('../data/courses.json');
+    const found = courses.filter(element => element.sigle == sigle);
+
     let result:Course[] = new Array();
-    for( var course in courses){
-			if(courses[course].sigle === sigle){
-        result.push( new this(
-          courses[course].id,
-          courses[course].sigle,
-          courses[course].nb_max_student,
-          courses[course].groupe,
-          courses[course].titre,
-          courses[course].date_debut,
-          courses[course].date_fin
+    
+    for(var course of found){
+      result.push(new this(
+          course.id,
+          course.sigle,
+          course.nb_max_student,
+          course.groupe,
+          course.titre,
+          course.date_debut,
+          course.date_fin
         ));
-      }
     }
+
     return result;
   }
 
@@ -109,3 +130,6 @@ export class Course {
 	}
 
 }
+
+
+   

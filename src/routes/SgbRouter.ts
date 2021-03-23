@@ -21,11 +21,8 @@ export class SgbRouter {
 	*/
 	public courses(req: Request, res: Response, next: NextFunction) {
 		try {
-			// Invoquer l'opération système (du DSS) dans le contrôleur GRASP
 			let token = req.headers.token as string
-			// console.log("Token from header:", token);
 			let courses = this.controller.courses(token);
-			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',
@@ -40,11 +37,9 @@ export class SgbRouter {
 
 	public students(req: Request, res: Response, next: NextFunction) {
 		try {
-			// Invoquer l'opération système (du DSS) dans le contrôleur GRASP
 			let token = req.headers.token as string
 			let course = parseInt(req.params.course) 
 			let data = this.controller.students(token,course);
-			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',
@@ -52,7 +47,6 @@ export class SgbRouter {
 				data: data
 			});
 		} catch (error) {
-			//console.log(error)
 			let code = 500; // internal server error
 			res.status(code).json({ error: error.toString() });
 		}
@@ -147,12 +141,9 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 
 	public courseNotes(req: Request, res: Response, next: NextFunction) { 
 		try {
-			// Invoquer l'opération système (du DSS) dans le contrôleur GRASP
 			let token = req.headers.token as string
 			let course = parseInt(req.params.course)
-			// console.log("coursesNotes called with token", token, " and course ", course)
 			let data = this.controller.courseNotes(token,course);
-			// this.generate_latency();
 			res.status(200)
 			.send({
 				message: 'Success',

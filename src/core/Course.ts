@@ -31,24 +31,6 @@ export class Course {
 
   }
   
-  static fromId2(id:number){
-    let   courses = require('../data/courses.json');
-		for( var course in courses){
-			if(courses[course].id == id){
-        return new this(
-          courses[course].id,
-          courses[course].sigle,
-          courses[course].nb_max_student,
-          courses[course].groupe,
-          courses[course].titre,
-          courses[course].date_debut,
-          courses[course].date_fin
-        );
-			}
-    }
-     throw new Error("Course id not found");
-  }
-
   static fromSigle(sigle: string): Course[] {
     let   courses = require('../data/courses.json');
     const found = courses.filter(element => element.sigle == sigle);
@@ -130,6 +112,7 @@ export class Course {
 	}
 
 }
+
 
 
    

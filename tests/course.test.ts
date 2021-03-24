@@ -6,6 +6,7 @@ import app from '../src/App';
 import { Course } from '../src/core/Course';
 import * as md5 from 'md5';
 import { POINT_CONVERSION_UNCOMPRESSED } from 'constants';
+import { FORMERR } from 'dns';
 // import md5 = require('md5');
 
 chai.use(chaiHttp);
@@ -48,3 +49,5 @@ describe('CourseTest', () => {
     console.log(course.students());
   });
 });
+
+

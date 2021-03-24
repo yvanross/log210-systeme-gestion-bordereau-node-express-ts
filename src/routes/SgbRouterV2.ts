@@ -43,8 +43,7 @@ export class SgbRouterV2 {
 	* Take each handler, and attach to one of the Express.Router's
 	* endpoints.
 	*/
-	init() {
-	/**
+		/**
 	 * @api {get} /v2/login?email=email&password=password Login
 	 * @apiGroup Application
 	 * @apiDescription Authentification de l'usager et récupération du token d'authentification
@@ -61,7 +60,7 @@ export class SgbRouterV2 {
   email: 'teacher+3@gmail.com',
   password: '' }
 	 */
-
+  init() {
 		this.router.get('/login', this.login.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
 	}
 }

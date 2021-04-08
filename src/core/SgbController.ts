@@ -45,14 +45,14 @@ export class SgbController {
 
 	public courses(token: string) {
 		let teacher = Teacher.fromToken(token); 
-		return JSON.stringify(teacher.courses());// will generate an error if token is invalid
+		return teacher.courses();// will generate an error if token is invalid
 
 	}
 
 	public students(token: string,course_id:number) {
 		let teacher = Teacher.fromToken(token); // will generate an error if token is invalid
 		if(teacher.giveCourse(course_id))
-			return JSON.stringify(Course.fromId(course_id).students());
+			return Course.fromId(course_id).students();
 
 		throw new Error("This teacher do not give this course")
 	}
@@ -84,7 +84,7 @@ export class SgbController {
 
 	public studentCourses(token:string){
 		let student = Student.fromToken(token);
-		return JSON.stringify(student.courses()); // will generate an error if token is invalid
+		return student.courses(); // will generate an error if token is invalid
 	}
 
 	public courseNotes(token:string,course_id:number){

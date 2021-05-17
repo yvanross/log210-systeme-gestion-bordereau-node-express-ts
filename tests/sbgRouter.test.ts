@@ -100,12 +100,12 @@ describe('Teacher', () => {
 	describe('Get Courses', () => {
 
 		it('responds with successful call for courses with valid teacher token ', async () => {
-			let result = JSON.stringify([Course.fromId(3), Course.fromId(4)])
+			let result = [Course.fromId(3), Course.fromId(4)];
 			const res = await chai.request(app).get('/api/v1/courses')
 				.set('token', md5('teacher+3@gmail.com'))
 			expect(res.status).to.equal(200);
 			expect(res).to.be.json;
-			expect(res.body.data).to.equal(result)
+			expect(res.body.data).to.deep.equal(result);
 		},10000);
 
 		it('responds with error if call for courses with invalid teacher token ', async () => {
@@ -119,12 +119,12 @@ describe('Teacher', () => {
 
 	describe('get Students', () => {
 		it('responds with successful call for students with valid teacher token ', async () => {
-			let students_following_course_3_teached_by_teacher_3 = JSON.stringify([Student.fromId(2), Student.fromId(6)]);
+			let students_following_course_3_teached_by_teacher_3 = [Student.fromId(2), Student.fromId(6)];
 			const res = await chai.request(app).get('/api/v1/course/3/students')
 				.set('token', md5('teacher+3@gmail.com'))
 			expect(res.status).to.equal(200);
 			expect(res).to.be.json;
-			expect(res.body.data).to.equal(students_following_course_3_teached_by_teacher_3)
+			expect(res.body.data).to.deep.equal(students_following_course_3_teached_by_teacher_3);
 		},10000);
 
 		it('responds with error if call for students with invali teacher token ', async () => {
@@ -196,13 +196,13 @@ describe('student courses', () => {
 	});
 
 	it('responds with all courses of a student', async () => {
-		let expected_results = JSON.stringify([Course.fromId(5), Course.fromId(6)])
+		let expected_results = [Course.fromId(5), Course.fromId(6)];
 
 		const res = await chai.request(app).get('/api/v1/student/courses')
 			.set('token', md5('student+3@gmail.com'))
 		expect(res.status).to.equal(200);
 		expect(res).to.be.json;
-		expect(res.body.data).to.deep.equal(expected_results)
+		expect(res.body.data).to.deep.equal(expected_results);
 	},10000);
 
 	it('responds fail if token is teacher', async () => {

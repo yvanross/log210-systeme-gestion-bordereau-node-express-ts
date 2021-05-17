@@ -268,7 +268,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	 this.router.get('/student/note', this.studentNote.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
 		
 	 /**
-	 * @api {put} /v1/note?student_id=student_id&course_id=course_id&type=type&type_id=type_id&note=note Enseignant ajouter une note à un étudiant
+	 * @api {post} /v1/note?student_id=student_id&course_id=course_id&type=type&type_id=type_id&note=note Enseignant ajouter une note à un étudiant
 	 * @apiGroup Enseignant
 	 * @apiDescription L'enseignant ajoute une note dans le dossier de l'étudiant
 	 * @apiVersion 1.0.0
@@ -305,7 +305,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	 *
 	 * @apiParam {String} token Authentification token dans le header.
 	 *
-	 *  @apiSuccess (200) {String} json [ { id: 5,
+	 *  @apiSuccess (200) {JSON} data [ { id: 5,
 	    sigle: 'LOG430',
 	    nb_max_student: 5,
 	    groupe: '01',
@@ -326,7 +326,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	 * @apiParam {String} token Authentification token dans le header.
 	 *
 
-	 *  @apiSuccess (200) {String} json [ { id: 3,
+	 *  @apiSuccess (200) {JSON} data [ { id: 3,
     sigle: 'LOG210',
     nb_max_student: 5,
     groupe: '03',
@@ -363,7 +363,7 @@ public studentCourses(req: Request, res: Response, next: NextFunction) {
 	 * @apiParam {String} token Token d'authentification de l'enseignant dans le header.
    * @apiParam {Integer} :course id du cours .
 	 *
-	 *  @apiSuccess (200) {String} json [ { id: 2,
+	 *  @apiSuccess (200) {JSON} data [ { id: 2,
     first_name: 'firstname2',
     last_name: 'last_name2',
     email: 'student+2@gmail.com',

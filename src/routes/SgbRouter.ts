@@ -105,7 +105,7 @@ export class SgbRouter {
 		try {
 			// Invoquer l'opération système (du DSS) dans le contrôleur GRASP
 			let token = req.headers.token as string
-			let data = this.controller.studentNotes(token);
+			let data = this.controller.studentNotes(token)??[];
 			let sortedData = data.sort((n1,n2) => n1.course - n2.course);
 			// this.generate_latency();
 			res.status(200)

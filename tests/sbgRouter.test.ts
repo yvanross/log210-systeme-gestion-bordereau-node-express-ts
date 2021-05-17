@@ -149,6 +149,13 @@ describe('Student notes', () => {
 	beforeEach(async () => {
 		loginStudent()
 	})
+	
+	it('should not crash if student have no notes', async () => {
+		const res = await chai.request(app).get('/api/v1/student/notes/')
+			.set('token', md5('student+3@gmail.com'))
+		expect(res.status).to.equal(200);
+	},10000);
+
 
 	it('responds with error if call for note is done without authentification token', async () => {
 		const res = await chai.request(app).get('/api/v1/student/note?course=12&type=devoir&type_id=13&note=65.02')

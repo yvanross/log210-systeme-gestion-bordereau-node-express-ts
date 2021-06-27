@@ -25,7 +25,7 @@ export class SgbController {
         if (token !== null)
             return token;
 
-        throw new Error("Email and password do not match a student or a teacher")
+        throw new Error("Email and password do not match a student or a teacher");
     }
 
     public loginV2(email: string, password: string) {
@@ -37,7 +37,7 @@ export class SgbController {
         if (token !== null)
             return token;
 
-        throw new Error("Email and password do not match a student or a teacher")
+        throw new Error("Email and password do not match a student or a teacher");
     }
 
 
@@ -52,7 +52,7 @@ export class SgbController {
         if (teacher.giveCourse(course_id))
             return Course.fromId(course_id).students();
 
-        throw new Error("This teacher do not give this course")
+        throw new Error("This teacher do not give this course");
     }
 
 
@@ -60,11 +60,11 @@ export class SgbController {
     public note(token: string, student_id: number, course_id: number, type: string, type_id: number, note: number) {
         let teacher = Teacher.fromToken(token); // will generate an error if token is invalid
         if (!teacher.giveCourse(course_id))
-            throw new Error("This teacher do not give this course")
+            throw new Error("This teacher do not give this course");
 
-        let student = Student.fromId(student_id)
+        let student = Student.fromId(student_id);
         if (!student.followCourse(course_id))
-            throw new Error("This student to not follow this course")
+            throw new Error("This student to not follow this course");
 
         this.notes.set(student_id, course_id, type, type_id, note);
     }

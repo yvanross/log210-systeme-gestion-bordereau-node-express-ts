@@ -24,7 +24,7 @@ describe('StudentTest', () => {
     expect(student.id()).to.equal(1);
     expect(student.name()).to.equal("firstname1 last_name1");
     expect(student.email()).to.equal("student+1@gmail.com");
-    expect(student.permanent_code()).to.equal("lastf1")
+    expect(student.permanent_code()).to.equal("lastf1");
   });
 
 

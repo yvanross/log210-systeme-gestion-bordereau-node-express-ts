@@ -19,11 +19,11 @@ export class Notes {
         var results = new Array();
         this.multimap.forEach((entry, key) => {
             if (entry.course == course_id) {
-                entry["student"] = key
-                results.push(entry)
+                entry["student"] = key;
+                results.push(entry);
             }
         })
-        return results
+        return results;
     }
 
     public clear() {

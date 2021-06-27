@@ -42,24 +42,22 @@ export class SgbRouterV2 {
     /**
     * Take each handler, and attach to one of the Express.Router's
     * endpoints.
+    * @api {get} /v2/login?email=email&password=password Login
+    * @apiGroup Application
+    * @apiDescription Authentification de l'usager et récupération du token d'authentification
+    * @apiVersion 2.0.0
+    * @apiParam {String} email courriel de l'usager.  Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP
+    * @apiParam {String} password non vérifier.
+    *
+    * @apiSuccess (200) {String}  message Success
+    * @apiSuccess (200) {String}  status
+    * @apiSuccess (200) {String}  token Authentification token à inclure dans le header des requêtes subséquentes
+    * @apiSuccess (200) {String}  user Information sur l'usager courant { id: 3,
+    *   first_name: 'firstname3',
+    *   last_name: 'last_name3',
+    *   email: 'teacher+3@gmail.com',
+    *   password: '' }
     */
-    /**
- * @api {get} /v2/login?email=email&password=password Login
- * @apiGroup Application
- * @apiDescription Authentification de l'usager et récupération du token d'authentification
- * @apiVersion 2.0.0
- * @apiParam {String} email courriel de l'usager.  Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP
- * @apiParam {String} password non vérifier.
- *
- * @apiSuccess (200) {String}  message Success
- * @apiSuccess (200) {String}  status
- * @apiSuccess (200) {String}  token Authentification token à inclure dans le header des requêtes subséquentes
- * @apiSuccess (200) {String}  user Information sur l'usager courant { id: 3,
-first_name: 'firstname3',
-last_name: 'last_name3',
-email: 'teacher+3@gmail.com',
-password: '' }
- */
     init() {
         this.router.get('/login', this.login.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
     }

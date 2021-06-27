@@ -2,12 +2,12 @@ import { Student } from "./Student"
 
 export class Course {
   private _id: number;
-  private _sigle: string
-  private _nb_max_student: number
-  private _groupe: string
-  private _titre: string
-  private _date_debut: string
-  private _date_fin: string
+  private _sigle: string;
+  private _nb_max_student: number;
+  private _groupe: string;
+  private _titre: string;
+  private _date_debut: string;
+  private _date_fin: string;
 
   static fromId(id: number) {
     let courses = require('../data/courses.json');
@@ -25,7 +25,6 @@ export class Course {
       found.date_debut,
       found.date_fin
     );
-
   }
 
   static fromSigle(sigle: string): Course[] {
@@ -76,7 +75,7 @@ export class Course {
   }
 
   public nb_max_student(): number {
-    return this._nb_max_student
+    return this._nb_max_student;
   }
 
   public groupe(): string {
@@ -101,7 +100,7 @@ export class Course {
     let _students = []
     for (let index in course_student) {
       if (course_student[index].course_id == this._id) {
-        _students.push(Student.fromId(course_student[index].student_id))
+        _students.push(Student.fromId(course_student[index].student_id));
       }
     }
     return _students;

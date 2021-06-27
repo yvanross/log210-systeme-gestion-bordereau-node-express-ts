@@ -11,7 +11,7 @@ export class Teacher {
     let teachers = require('../data/teachers.json');
     for (var teacher in teachers) {
       if (teachers[teacher].email == email) {
-        return md5(email)
+        return md5(email);
       }
     }
     return null;
@@ -21,9 +21,9 @@ export class Teacher {
     let teachers = require('../data/teachers.json');
     for (var teacher in teachers) {
       if (teachers[teacher].email == email) {
-        let current_teacher = teachers[teacher]
-        current_teacher.password = ''
-        return [md5(email), current_teacher]
+        let current_teacher = teachers[teacher];
+        current_teacher.password = '';
+        return [md5(email), current_teacher];
       }
     }
     return null;
@@ -37,7 +37,8 @@ export class Teacher {
           teachers[teacher].id,
           teachers[teacher].first_name,
           teachers[teacher].last_name,
-          teachers[teacher].email);
+          teachers[teacher].email
+        );
       }
     }
     throw new Error("Teacher id not found");
@@ -64,10 +65,10 @@ export class Teacher {
     last_name: string,
     email: string
   ) {
-    this._id = id
-    this._first_name = first_name
-    this._last_name = last_name
-    this._email = email
+    this._id = id;
+    this._first_name = first_name;
+    this._last_name = last_name;
+    this._email = email;
   }
 
   public id() {
@@ -85,9 +86,9 @@ export class Teacher {
     let courses = this.courses()
     for (let index in courses) {
       if (courses[index].id() == course_id)
-        return true
+        return true;
     }
-    return false
+    return false;
   }
   // public token(){
   //   return md5(this._email);
@@ -95,10 +96,10 @@ export class Teacher {
 
   public courses() {
     let course_teacher = require('../data/course_teacher.json');
-    let _courses = []
+    let _courses = [];
     for (let i in course_teacher) {
       if (this.id() == course_teacher[i].teacher_id) {
-        _courses.push(Course.fromId(course_teacher[i].course_id))
+        _courses.push(Course.fromId(course_teacher[i].course_id));
       }
     }
     return _courses;

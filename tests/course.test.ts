@@ -33,7 +33,7 @@ describe('CourseTest', () => {
     let courses: Course[] = Course.fromSigle("LOG210");
     expect(courses.length).to.equal(4);
     let course_id_array: number[] = courses.map(c => c.id());
-    expect(course_id_array.sort()).to.deep.equal([1, 2, 3, 4].sort())
+    expect(course_id_array.sort()).to.deep.equal([1, 2, 3, 4].sort());
   })
 
   it('course.students', () => {

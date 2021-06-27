@@ -14,7 +14,7 @@ describe('TeacherTest', () => {
   });
 
   it('fail to create teacher by token', () => {
-    expect(() => { Teacher.fromToken(md5("invalidemail")); }).to.throw('Teacher token not found');
+    expect(() => { Teacher.fromToken(md5("invalidemail") as string); }).to.throw('Teacher token not found');
     // expect(new Teacher(1)).to.throw(ex);
   });
 
@@ -28,7 +28,7 @@ describe('TeacherTest', () => {
 
 
   it('get teacher by Token', () => {
-    let teacher = Teacher.fromToken(md5("teacher+1@gmail.com"));
+    let teacher = Teacher.fromToken(md5("teacher+1@gmail.com") as string);
     expect(teacher.id()).to.equal(1);
     expect(teacher.name()).to.equal("firstname1 last_name1");
     expect(teacher.email()).to.equal("teacher+1@gmail.com");

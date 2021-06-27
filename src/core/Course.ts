@@ -56,7 +56,8 @@ export class Course {
     groupe: string,
     titre: string,
     date_debut: string,
-    date_fin: string) {
+    date_fin: string
+  ) {
     this._id = id;
     this._sigle = sigle;
     this._nb_max_student = nb_max_student;

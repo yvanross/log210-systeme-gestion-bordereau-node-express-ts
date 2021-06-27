@@ -84,7 +84,8 @@ export class SgbRouter {
                 parseInt(req.query.course as string),
                 req.query.type as string,
                 parseInt(req.query.type_id as string),
-                parseFloat(req.query.note as string));
+                parseFloat(req.query.note as string)
+            );
             // this.generate_latency();
 
 

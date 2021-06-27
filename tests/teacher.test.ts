@@ -38,6 +38,4 @@ describe('TeacherTest', () => {
     let teacher = Teacher.fromId(1);
     expect(teacher.courses().length).to.equal(2);
   });
-
-
 });

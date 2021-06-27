@@ -311,4 +311,3 @@ describe('test utility', () => {
         expect(res).to.be.json;
     }, 10000);
 });
-

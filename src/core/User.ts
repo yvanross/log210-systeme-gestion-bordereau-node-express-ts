@@ -25,6 +25,4 @@ export class User {
         }
         throw new Error("Email and password do not match a student or a student")
     }
-
-
 }

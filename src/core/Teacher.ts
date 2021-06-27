@@ -62,7 +62,8 @@ export class Teacher {
     id: number,
     first_name: string,
     last_name: string,
-    email: string) {
+    email: string
+  ) {
     this._id = id
     this._first_name = first_name
     this._last_name = last_name

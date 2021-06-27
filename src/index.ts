@@ -11,7 +11,6 @@ const port = normalizePort(process.env.PORT || 3001);
 
 console.log("Starting server on port: ", port);
 console.log("use http://localhost:3001/docs/index.html to access server documentation");
-console.log("use http://localhost:3001/docs/index.html to access server documentation");
 
 
 App.set('port', port);

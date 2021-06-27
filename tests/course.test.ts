@@ -42,5 +42,3 @@ describe('CourseTest', () => {
     console.log(course.students());
   });
 });
-
-

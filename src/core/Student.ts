@@ -65,7 +65,8 @@ export class Student {
     first_name: string,
     last_name: string,
     email: string,
-    permanent_code: string) {
+    permanent_code: string
+  ) {
     this._id = id;
     this._first_name = first_name;
     this._last_name = last_name;
@@ -110,5 +111,4 @@ export class Student {
     }
     return _courses;
   }
-
 }

@@ -44,6 +44,4 @@ describe('StudentTest', () => {
     let student = Student.fromId(3);
     expect(student.courses().length).to.equal(2);
   });
-
-
 });

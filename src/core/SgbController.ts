@@ -4,7 +4,6 @@ import { Teacher } from './Teacher';
 import { Student } from './Student';
 import { Course } from './Course';
 import { Notes } from './Notes';
-import { isNull } from 'util';
 
 // classe contrôleur GRASP
 export class SgbController {
@@ -18,25 +17,19 @@ export class SgbController {
 	/**
 	*  opérations systèmes
 	*/
-	public login(email:string, password:string){
-		let token = Student.login(email,password);
-		if(!isNull(token))
+		if(token !== null)
 			return token;
 
-		token = Teacher.login(email,password)
-		if(!isNull(token))
+		if(token !== null)
 			return token;
 
 		throw new Error("Email and password do not match a student or a teacher")
 	}
 
-	public loginV2(email:string, password:string){
-		let token = Student.loginV2(email,password);
-		if(!isNull(token))
+		if(token !== null)
 			return token;
 
-		token = Teacher.loginV2(email,password)
-		if(!isNull(token))
+		if(token !== null)
 			return token;
 
 		throw new Error("Email and password do not match a student or a teacher")

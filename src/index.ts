@@ -1,5 +1,5 @@
-import * as http from 'http';
-import * as debug from 'debug';
+import http from 'http';
+import debug from 'debug';
 
 import App from './App';
 

@@ -1,12 +1,7 @@
-import * as chai from 'chai';
-import chaiHttp = require('chai-http');
-// import { exception } from 'console';
-
-import app from '../src/App';
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import md5 from 'md5';
 import { Teacher } from '../src/core/Teacher';
-// import md5 = require('md5');
-import * as md5 from 'md5';
-
 
 chai.use(chaiHttp);
 const expect = chai.expect;

@@ -1,7 +1,4 @@
-import Multimap = require('multimap');
-import { Student } from './Student';
-import { Teacher } from './Teacher';
-import { Course } from './Course';
+import Multimap from "multimap";
 
 export class Notes {
   multimap:Multimap;

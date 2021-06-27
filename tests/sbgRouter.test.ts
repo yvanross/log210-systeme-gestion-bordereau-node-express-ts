@@ -1,7 +1,7 @@
-import * as chai from 'chai';
-import chaiHttp = require('chai-http');
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import md5 from 'md5';
 import app from '../src/App';
-import * as md5 from 'md5';
 import { Course } from '../src/core/Course';
 import { Student } from '../src/core/Student';
 

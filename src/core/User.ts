@@ -1,7 +1,3 @@
-import Multimap = require('multimap');
-import md5 = require('md5');
-import { Course } from './Course';
-
 import { Student } from './Student';
 import { Teacher } from './Teacher';
 

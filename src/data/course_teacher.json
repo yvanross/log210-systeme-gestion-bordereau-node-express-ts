@@ -23,17 +23,17 @@
     "id": 5,
     "teacher_id": 5,
     "course_id": 5
-  }, 
+  },
   {
     "id": 6,
     "teacher_id": 6,
     "course_id": 6
-  }, 
+  },
   {
     "id": 7,
     "teacher_id": 7,
     "course_id": 7
-  }, 
+  },
   {
     "id": 8,
     "teacher_id": 8,
@@ -63,17 +63,17 @@
     "id": 13,
     "teacher_id": 5,
     "course_id": 6
-  }, 
+  },
   {
     "id": 14,
     "teacher_id": 6,
     "course_id": 7
-  }, 
+  },
   {
     "id": 15,
     "teacher_id": 7,
     "course_id": 8
-  }, 
+  },
   {
     "id": 16,
     "teacher_id": 8,

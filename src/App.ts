@@ -5,6 +5,7 @@ import { sgbRoutes } from './routes/SgbRouter';
 import { sgbRoutesV2 } from './routes/SgbRouterV2';
 
 
+
 // Creates and configures an ExpressJS web server.
 class App {
 
@@ -37,15 +38,15 @@ class App {
     //   });
     // });
 
-    router.get('/', function(req, res) {
-      res.redirect('/docs/index.html'); 
-  });
+    router.get('/', function (req, res) {
+      res.redirect('/docs/index.html');
+    });
 
     this.express.use('/', router);  // routage de base
     this.express.use('/api/v1', sgbRoutes.router);  // tous les URI pour le scénario du système de gestion des bordereau commencent ainsi
     this.express.use('/api/v2', sgbRoutesV2.router);  // tous les URI pour le scénario du système de gestion des bordereau commencent ainsi
     this.express.use('/docs', express.static('dist/docs'))
- 
+
   }
 
 }

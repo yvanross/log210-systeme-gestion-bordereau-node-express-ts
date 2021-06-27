@@ -1,7 +1,5 @@
-import * as path from 'path';
-import * as express from 'express';
-import * as logger from 'morgan';
-import * as bodyParser from 'body-parser';
+import express from 'express';
+import logger from 'morgan';
 
 import { sgbRoutes } from './routes/SgbRouter';
 import { sgbRoutesV2 } from './routes/SgbRouterV2';
@@ -23,8 +21,8 @@ class App {
   // Configure Express middleware.
   private middleware(): void {
     this.express.use(logger('dev'));
-    this.express.use(bodyParser.json());
-    this.express.use(bodyParser.urlencoded({ extended: false }));
+    this.express.use(express.json());
+    this.express.use(express.urlencoded({ extended: false }));
   }
 
   // Configure API endpoints.

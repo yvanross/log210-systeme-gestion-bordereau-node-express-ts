@@ -35,12 +35,12 @@ describe('StudentTest', () => {
     expect(student.email()).to.equal("student+1@gmail.com");
   });
 
-  it('get student courses', () => {
+  it('get student 1 courses', () => {
     let student = Student.fromId(1);
     expect(student.courses().length).to.equal(2);
   });
 
-  it('get student courses', () => {
+  it('get student 3 courses', () => {
     let student = Student.fromId(3);
     expect(student.courses().length).to.equal(2);
   });

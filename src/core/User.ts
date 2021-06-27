@@ -23,6 +23,6 @@ export class User {
                 return Teacher.fromId(teachers[teacher])
             }
         }
-        throw new Error("Email and password do not match a student or a student")
+        throw new Error("Email and password do not match a student or a teacher")
     }
 }

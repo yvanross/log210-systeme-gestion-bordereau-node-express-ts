@@ -18,22 +18,4 @@ export class User {
 		this._last_name = last_name;
 		this._email = email;
 	}
-
-
-    public login(email: string, password: string) {
-        let students = require('../data/students.json');
-        for (var student in students) {
-            if (students[student].email == email) {
-                return Student.fromId(students[student].id);
-            }
-        }
-
-        let teachers = require('../data/teachers.json');
-        for (var teacher in teachers) {
-            if (teachers[teacher].email == email) {
-                return Teacher.fromId(teachers[teacher]);
-            }
-        }
-        throw new Error("Email and password do not match a student or a teacher");
-    }
 }

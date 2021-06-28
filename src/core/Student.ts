@@ -1,13 +1,10 @@
 import md5 from 'md5';
 import { Course } from './Course';
+import { User } from './User';
 
 
-export class Student {
-  private _id: number = 0;
-  private _first_name: string;
-  private _last_name: string;
-  private _email: string;
-  private _permanent_code: string;
+export class Student extends User {
+  protected _permanent_code: string
 
   static login(email: string, password: string) {
     let students = require('../data/students.json');
@@ -67,10 +64,7 @@ export class Student {
     email: string,
     permanent_code: string
   ) {
-    this._id = id;
-    this._first_name = first_name;
-    this._last_name = last_name;
-    this._email = email;
+    super(id, first_name, last_name, email);
     this._permanent_code = permanent_code;
   }
 

@@ -1,12 +1,8 @@
 import md5 from 'md5';
 import { Course } from './Course';
+import { User } from './User';
 
-export class Teacher {
-  private _id: number = 0;
-  private _first_name: string;
-  private _last_name: string;
-  private _email: string;
-
+export class Teacher extends User{
   static login(email: string, password: string) {
     let teachers = require('../data/teachers.json');
     for (var teacher in teachers) {
@@ -58,17 +54,6 @@ export class Teacher {
     console.log("XXXXX");
     console.log(token);
     throw new Error("Teacher token not found");
-  }
-  constructor(
-    id: number,
-    first_name: string,
-    last_name: string,
-    email: string
-  ) {
-    this._id = id;
-    this._first_name = first_name;
-    this._last_name = last_name;
-    this._email = email;
   }
 
   public id() {

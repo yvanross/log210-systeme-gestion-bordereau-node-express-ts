@@ -98,7 +98,7 @@ export class Course {
 
   public students(): Student[] {
     let course_student: CourseStudentJSON[] = require('../data/course_student.json');
-    let _students: Student[] = []
+    let _students: Student[] = [];
     for (let index in course_student) {
       if (course_student[index].course_id == this._id) {
         _students.push(Student.fromId(course_student[index].student_id));

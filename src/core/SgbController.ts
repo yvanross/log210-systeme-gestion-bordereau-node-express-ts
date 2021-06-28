@@ -21,7 +21,7 @@ export class SgbController {
         if (token !== null)
             return token;
 
-        token = Teacher.login(email, password)
+        token = Teacher.login(email, password);
         if (token !== null)
             return token;
 
@@ -33,7 +33,7 @@ export class SgbController {
         if (token !== null)
             return token;
 
-        token = Teacher.loginV2(email, password)
+        token = Teacher.loginV2(email, password);
         if (token !== null)
             return token;
 

@@ -69,9 +69,7 @@ export class Teacher extends User{
     return this._email;
   }
   public giveCourse(course_id: number) {
-    let courses = this.courses()
-    for (let index in courses) {
-      if (courses[index].id() == course_id)
+    let courses = this.courses();
         return true;
     }
     return false;

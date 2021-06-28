@@ -1,6 +1,3 @@
-import { Student } from './Student';
-import { Teacher } from './Teacher';
-
 export class User {
 	protected _id: number = 0;
 	protected _first_name: string;

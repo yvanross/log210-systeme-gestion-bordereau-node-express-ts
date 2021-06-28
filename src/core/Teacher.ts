@@ -1,10 +1,11 @@
 import md5 from 'md5';
+import type { CourseTeacherJSON, TeacherJSON } from '../data';
 import { Course } from './Course';
 import { User } from './User';
 
 export class Teacher extends User{
   static login(email: string, password: string) {
-    let teachers = require('../data/teachers.json');
+    let teachers: TeacherJSON[] = require('../data/teachers.json');
     for (var teacher in teachers) {
       if (teachers[teacher].email == email) {
         return md5(email);
@@ -14,7 +15,7 @@ export class Teacher extends User{
   }
 
   static loginV2(email: string, password: string) {
-    let teachers = require('../data/teachers.json');
+    let teachers: TeacherJSON[] = require('../data/teachers.json');
     for (var teacher in teachers) {
       if (teachers[teacher].email == email) {
         let current_teacher = teachers[teacher];
@@ -26,7 +27,7 @@ export class Teacher extends User{
   }
 
   static fromId(id: number) {
-    let teachers = require('../data/teachers.json');
+    let teachers: TeacherJSON[] = require('../data/teachers.json');
     for (var teacher in teachers) {
       if (teachers[teacher].id == id) {
         return new this(
@@ -41,7 +42,7 @@ export class Teacher extends User{
   }
 
   static fromToken(token: string) {
-    let teachers = require('../data/teachers.json');
+    let teachers: TeacherJSON[] = require('../data/teachers.json');
     for (var teacher in teachers) {
       if (md5(teachers[teacher].email) == token) {
         return new this(
@@ -80,7 +81,7 @@ export class Teacher extends User{
   // }
 
   public courses() {
-    let course_teacher = require('../data/course_teacher.json');
+    let course_teacher: CourseTeacherJSON[] = require('../data/course_teacher.json');
     let _courses = [];
     for (let i in course_teacher) {
       if (this.id() == course_teacher[i].teacher_id) {

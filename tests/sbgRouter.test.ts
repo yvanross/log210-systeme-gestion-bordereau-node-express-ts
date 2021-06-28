@@ -4,6 +4,7 @@ import md5 from 'md5';
 import app from '../src/App';
 import { Course } from '../src/core/Course';
 import { Student } from '../src/core/Student';
+import type { CourseJSON, StudentJSON } from '../src/data';
 
 
 
@@ -11,8 +12,8 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 const should = chai.should();
 
-let courses = require('../src/data/courses.json');
-let students = require('../src/data/students.json');
+let courses: CourseJSON[] = require('../src/data/courses.json');
+let students: StudentJSON[] = require('../src/data/students.json');
 
 async function loginTeacher() {
     chai.request(app).get('/api/v1/login?email=teacher%2B3%40gmail.com&password=1234')

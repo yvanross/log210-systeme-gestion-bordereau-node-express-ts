@@ -1,3 +1,4 @@
+import type { CourseJSON, CourseStudentJSON } from "../data";
 import { Student } from "./Student"
 
 export class Course {
@@ -10,7 +11,7 @@ export class Course {
   private _date_fin: string;
 
   static fromId(id: number) {
-    let courses = require('../data/courses.json');
+    let courses: CourseJSON[] = require('../data/courses.json');
     const found = courses.find(element => element.id == id);
 
     if (found === undefined)
@@ -28,7 +29,7 @@ export class Course {
   }
 
   static fromSigle(sigle: string): Course[] {
-    let courses = require('../data/courses.json');
+    let courses: CourseJSON[] = require('../data/courses.json');
     const found = courses.filter(element => element.sigle == sigle);
 
     let result: Course[] = new Array();
@@ -95,9 +96,9 @@ export class Course {
   }
 
 
-  public students() {
-    let course_student = require('../data/course_student.json');
-    let _students = []
+  public students(): Student[] {
+    let course_student: CourseStudentJSON[] = require('../data/course_student.json');
+    let _students: Student[] = []
     for (let index in course_student) {
       if (course_student[index].course_id == this._id) {
         _students.push(Student.fromId(course_student[index].student_id));

@@ -9,53 +9,45 @@ export class Student extends User {
 
   static login(email: string, password: string) {
     let students: StudentJSON[] = require('../data/students.json');
-    for (var student in students) {
-      if (students[student].email == email) {
-        return md5(email);
-      }
-    }
-    return null;
+    const student = students.find(student => email == student.email);
+
+    return student ? md5(email) : null;
   }
 
   static loginV2(email: string, password: string) {
     let students: StudentJSON[] = require('../data/students.json');
-    for (var student in students) {
-      if (students[student].email == email) {
-        let current_student = students[student];
-        current_student.password = '';
-        return [md5(email), current_student];
-      }
-    }
-    return null;
+    const student = students.find(student => email == student.email);
+
+    return student ? { token: md5(email), user: student } : null;
   }
   static fromId(id: number) {
     let students: StudentJSON[] = require('../data/students.json');
-    for (var student in students) {
-      if (students[student].id == id) {
-        return new this(
-          students[student].id,
-          students[student].first_name,
-          students[student].last_name,
-          students[student].email,
-          students[student].permanent_code);
-      }
-    }
-    throw new Error("Student id not found");
+    const student = students.find(student => id == student.id);
+
+    if (!student)
+      throw new Error("Student id not found");
+
+    return new this(
+      student.id,
+      student.first_name,
+      student.last_name,
+      student.email,
+      student.permanent_code);
   }
 
   static fromToken(token: string) {
     let students: StudentJSON[] = require('../data/students.json');
-    for (var student in students) {
-      if (md5(students[student].email) == token) {
-        return new this(
-          students[student].id,
-          students[student].first_name,
-          students[student].last_name,
-          students[student].email,
-          students[student].permanent_code);
-      }
-    }
-    throw new Error("Student token not found");
+    const student = students.find(student => token == md5(student.email));
+
+    if (!student)
+      throw new Error("Student token not found");
+
+    return new this(
+      student.id,
+      student.first_name,
+      student.last_name,
+      student.email,
+      student.permanent_code);
   }
 
   constructor(
@@ -80,30 +72,23 @@ export class Student extends User {
   public email() {
     return this._email;
   }
-  // public token(){
-  //   return md5(this._email);
-  // }
 
   public permanent_code() {
     return this._permanent_code;
   }
 
   public followCourse(course_id: number) {
-    let courses = this.courses();
-    for (let index in courses) {
-      if (courses[index].id() == course_id)
-        return true;
-    }
-    return false;
+    const courses = this.courses();
+    const index = courses.findIndex(course => course_id == course.id());
+
+    return index !== -1;
   }
+
   public courses(): Course[] {
-    let courseStudents: CourseStudentJSON[] = require('../data/course_student.json');
-    let courses = [];
-    for (let i in courseStudents) {
-      if (this.id() == courseStudents[i].student_id) {
-        courses.push(Course.fromId(courseStudents[i].course_id));
-      }
-    }
-    return courses;
+    const courseStudents: CourseStudentJSON[] = require('../data/course_student.json');
+
+    return courseStudents
+      .filter(courseStudent => this.id() == courseStudent.student_id)
+      .map(courseStudent => Course.fromId(courseStudent.course_id));
   }
 }

@@ -3,58 +3,52 @@ import type { CourseTeacherJSON, TeacherJSON } from '../data';
 import { Course } from './Course';
 import { User } from './User';
 
-export class Teacher extends User{
+export class Teacher extends User {
   static login(email: string, password: string) {
     let teachers: TeacherJSON[] = require('../data/teachers.json');
-    for (var teacher in teachers) {
-      if (teachers[teacher].email == email) {
-        return md5(email);
-      }
-    }
-    return null;
+    const teacher = teachers.find(teacher => email == teacher.email);
+
+    return teacher ? md5(email) : null;
   }
 
   static loginV2(email: string, password: string) {
-    let teachers: TeacherJSON[] = require('../data/teachers.json');
-    for (var teacher in teachers) {
-      if (teachers[teacher].email == email) {
-        let current_teacher = teachers[teacher];
-        current_teacher.password = '';
-        return [md5(email), current_teacher];
-      }
-    }
-    return null;
+    const teachers: TeacherJSON[] = require('../data/teachers.json');
+    const teacher = teachers.find(teacher => email == teacher.email);
+
+    return teacher ? { token: md5(email), user: teacher } : null;
   }
 
   static fromId(id: number) {
     let teachers: TeacherJSON[] = require('../data/teachers.json');
-    for (var teacher in teachers) {
-      if (teachers[teacher].id == id) {
-        return new this(
-          teachers[teacher].id,
-          teachers[teacher].first_name,
-          teachers[teacher].last_name,
-          teachers[teacher].email
-        );
-      }
-    }
-    throw new Error("Teacher id not found");
+    const teacher = teachers.find(teacher => teacher.id == id);
+
+    if (!teacher)
+      throw new Error("Teacher id not found");
+
+    return new this(
+      teacher.id,
+      teacher.first_name,
+      teacher.last_name,
+      teacher.email
+    );
   }
 
   static fromToken(token: string) {
     let teachers: TeacherJSON[] = require('../data/teachers.json');
-    for (var teacher in teachers) {
-      if (md5(teachers[teacher].email) == token) {
-        return new this(
-          teachers[teacher].id,
-          teachers[teacher].first_name,
-          teachers[teacher].last_name,
-          teachers[teacher].email);
-      }
+    const teacher = teachers.find(teacher => md5(teacher.email) == token);
+
+    if (!teacher) {
+      console.log("XXXXX");
+      console.log(token);
+      throw new Error("Teacher token not found");
     }
-    console.log("XXXXX");
-    console.log(token);
-    throw new Error("Teacher token not found");
+
+    return new this(
+      teacher.id,
+      teacher.first_name,
+      teacher.last_name,
+      teacher.email
+    );
   }
 
   public id() {
@@ -68,24 +62,19 @@ export class Teacher extends User{
   public email() {
     return this._email;
   }
+
   public giveCourse(course_id: number) {
-    let courses = this.courses();
-        return true;
-    }
-    return false;
+    const courses = this.courses();
+    const courseIndex = courses.findIndex(course => course_id == course.id());
+
+    return -1 !== courseIndex;
   }
-  // public token(){
-  //   return md5(this._email);
-  // }
 
   public courses() {
-    let courseTeachers: CourseTeacherJSON[] = require('../data/course_teacher.json');
-    let courses = [];
-    for (let i in courseTeachers) {
-      if (this.id() == courseTeachers[i].teacher_id) {
-        courses.push(Course.fromId(courseTeachers[i].course_id));
-      }
-    }
-    return courses;
+    const courseTeachers: CourseTeacherJSON[] = require('../data/course_teacher.json');
+
+    return courseTeachers
+      .filter(courseTeacher => this._id == courseTeacher.teacher_id)
+      .map(courseTeacher => Course.fromId(courseTeacher.course_id));
   }
 }

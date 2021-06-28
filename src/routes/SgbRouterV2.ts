@@ -30,8 +30,8 @@ export class SgbRouterV2 {
                 .send({
                     message: 'Success',
                     status: res.status,
-                    token: data[0],
-                    user: data[1]
+                    token: data.token,
+                    user: data.user
                 });
         } catch (error) {
             let code = 500; // internal server error

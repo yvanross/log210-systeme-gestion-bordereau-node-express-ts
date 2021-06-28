@@ -29,24 +29,19 @@ export class Course {
   }
 
   static fromSigle(sigle: string): Course[] {
-    let courses: CourseJSON[] = require('../data/courses.json');
-    const found = courses.filter(element => element.sigle == sigle);
+    const courses: CourseJSON[] = require('../data/courses.json');
 
-    let result: Course[] = new Array();
-
-    for (var course of found) {
-      result.push(new this(
+    return courses
+      .filter(course => course.sigle === sigle)
+      .map(course => new this(
         course.id,
         course.sigle,
         course.nb_max_student,
         course.groupe,
         course.titre,
         course.date_debut,
-        course.date_fin
-      ));
-    }
-
-    return result;
+        course.date_fin)
+      );
   }
 
   constructor(
@@ -98,13 +93,11 @@ export class Course {
 
   public students(): Student[] {
     let courseStudents: CourseStudentJSON[] = require('../data/course_student.json');
-    let students: Student[] = [];
-    for (let index in courseStudents) {
-      if (courseStudents[index].course_id == this._id) {
-        students.push(Student.fromId(courseStudents[index].student_id));
-      }
-    }
-    return students;
+
+    return courseStudents
+      .filter(courseStudent => courseStudent.course_id == this._id)
+      .map(courseStudent => Student.fromId(courseStudent.student_id));
+
   }
 
 }

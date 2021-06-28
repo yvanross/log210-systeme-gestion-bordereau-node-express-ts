@@ -14,7 +14,7 @@ export class Course {
     let courses: CourseJSON[] = require('../data/courses.json');
     const course = courses.find(course => course.id == id);
 
-    if (course === undefined)
+    if (!course)
       throw new Error("Course id not found");
 
     return new this(

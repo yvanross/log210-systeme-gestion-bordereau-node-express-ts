@@ -97,13 +97,13 @@ export class Student extends User {
     return false;
   }
   public courses(): Course[] {
-    let course_student: CourseStudentJSON[] = require('../data/course_student.json');
-    let _courses = [];
-    for (let i in course_student) {
-      if (this.id() == course_student[i].student_id) {
-        _courses.push(Course.fromId(course_student[i].course_id));
+    let courseStudents: CourseStudentJSON[] = require('../data/course_student.json');
+    let courses = [];
+    for (let i in courseStudents) {
+      if (this.id() == courseStudents[i].student_id) {
+        courses.push(Course.fromId(courseStudents[i].course_id));
       }
     }
-    return _courses;
+    return courses;
   }
 }

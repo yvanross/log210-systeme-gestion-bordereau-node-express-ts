@@ -79,13 +79,13 @@ export class Teacher extends User{
   // }
 
   public courses() {
-    let course_teacher: CourseTeacherJSON[] = require('../data/course_teacher.json');
-    let _courses = [];
-    for (let i in course_teacher) {
-      if (this.id() == course_teacher[i].teacher_id) {
-        _courses.push(Course.fromId(course_teacher[i].course_id));
+    let courseTeachers: CourseTeacherJSON[] = require('../data/course_teacher.json');
+    let courses = [];
+    for (let i in courseTeachers) {
+      if (this.id() == courseTeachers[i].teacher_id) {
+        courses.push(Course.fromId(courseTeachers[i].course_id));
       }
     }
-    return _courses;
+    return courses;
   }
 }

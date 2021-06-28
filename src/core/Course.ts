@@ -12,19 +12,19 @@ export class Course {
 
   static fromId(id: number) {
     let courses: CourseJSON[] = require('../data/courses.json');
-    const found = courses.find(element => element.id == id);
+    const course = courses.find(course => course.id == id);
 
-    if (found === undefined)
+    if (course === undefined)
       throw new Error("Course id not found");
 
     return new this(
-      found.id,
-      found.sigle,
-      found.nb_max_student,
-      found.groupe,
-      found.titre,
-      found.date_debut,
-      found.date_fin
+      course.id,
+      course.sigle,
+      course.nb_max_student,
+      course.groupe,
+      course.titre,
+      course.date_debut,
+      course.date_fin
     );
   }
 
@@ -97,14 +97,14 @@ export class Course {
 
 
   public students(): Student[] {
-    let course_student: CourseStudentJSON[] = require('../data/course_student.json');
-    let _students: Student[] = [];
-    for (let index in course_student) {
-      if (course_student[index].course_id == this._id) {
-        _students.push(Student.fromId(course_student[index].student_id));
+    let courseStudents: CourseStudentJSON[] = require('../data/course_student.json');
+    let students: Student[] = [];
+    for (let index in courseStudents) {
+      if (courseStudents[index].course_id == this._id) {
+        students.push(Student.fromId(courseStudents[index].student_id));
       }
     }
-    return _students;
+    return students;
   }
 
 }

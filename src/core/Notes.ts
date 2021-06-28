@@ -16,7 +16,7 @@ export class Notes {
     }
 
     public course(course_id: number) {
-        var results = new Array();
+        const results = [];
         this.multimap.forEach((entry, key) => {
             if (entry.course == course_id) {
                 entry["student"] = key;

@@ -38,8 +38,6 @@ export class Teacher extends User {
     const teacher = teachers.find(teacher => md5(teacher.email) == token);
 
     if (!teacher) {
-      console.log("XXXXX");
-      console.log(token);
       throw new Error("Teacher token not found");
     }
 

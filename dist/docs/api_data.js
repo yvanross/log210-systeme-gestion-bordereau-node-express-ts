@@ -177,9 +177,9 @@ define({ "api": [
         "200": [
           {
             "group": "200",
-            "type": "String",
+            "type": "JSON",
             "optional": false,
-            "field": "json",
+            "field": "data",
             "description": "<p>[ { id: 2, first_name: 'firstname2', last_name: 'last_name2', email: 'student+2@gmail.com', permanent_code: 'lastf2' },]</p>"
           }
         ]
@@ -214,9 +214,9 @@ define({ "api": [
         "200": [
           {
             "group": "200",
-            "type": "String",
+            "type": "JSON",
             "optional": false,
-            "field": "json",
+            "field": "data",
             "description": "<p>[ { id: 3, sigle: 'LOG210', nb_max_student: 5, groupe: '03', titre: 'Analyse et conception de logiciels', date_debut: '2019-09-03', date_fin: '2019-11-03' }, ...]</p>"
           }
         ]
@@ -227,7 +227,7 @@ define({ "api": [
     "name": "GetV1Courses"
   },
   {
-    "type": "put",
+    "type": "post",
     "url": "/v1/note?student_id=student_id&course_id=course_id&type=type&type_id=type_id&note=note",
     "title": "Enseignant ajouter une note à un étudiant",
     "group": "Enseignant",
@@ -276,7 +276,7 @@ define({ "api": [
     },
     "filename": "src/routes/SgbRouter.ts",
     "groupTitle": "Enseignant",
-    "name": "PutV1NoteStudent_idStudent_idCourse_idCourse_idTypeTypeType_idType_idNoteNote"
+    "name": "PostV1NoteStudent_idStudent_idCourse_idCourse_idTypeTypeType_idType_idNoteNote"
   },
   {
     "type": "get",
@@ -303,9 +303,9 @@ define({ "api": [
         "200": [
           {
             "group": "200",
-            "type": "String",
+            "type": "JSON",
             "optional": false,
-            "field": "json",
+            "field": "data",
             "description": "<p>[ { id: 5, sigle: 'LOG430', nb_max_student: 5, groupe: '01', titre: 'Architecture logicielle', date_debut: '2019-09-03', date_fin: '2019-09-03' }, ]</p>"
           }
         ]

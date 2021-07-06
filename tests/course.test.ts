@@ -36,7 +36,8 @@ describe('CourseTest', () => {
     expect(course_id_array.sort()).to.deep.equal([1, 2, 3, 4].sort());
   })
 
-  it('course.students', () => {
+  it.skip('course.students', () => {
+    // TODO: Check the contents of course.students().
     let course = Course.fromId(1);
     console.log("XXXXX");
     console.log(course.students());

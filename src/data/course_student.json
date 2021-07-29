@@ -23,17 +23,17 @@
     "id": 5,
     "student_id": 3,
     "course_id": 5
-  }, 
+  },
   {
     "id": 6,
     "student_id": 3,
     "course_id": 6
-  }, 
+  },
   {
     "id": 7,
     "student_id": 4,
     "course_id": 7
-  }, 
+  },
   {
     "id": 8,
     "student_id": 4,
@@ -63,17 +63,17 @@
     "id": 13,
     "student_id": 7,
     "course_id": 5
-  }, 
+  },
   {
     "id": 14,
     "student_id": 7,
     "course_id": 6
-  }, 
+  },
   {
     "id": 15,
     "student_id": 8,
     "course_id": 7
-  }, 
+  },
   {
     "id": 16,
     "student_id": 8,

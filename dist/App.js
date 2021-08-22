@@ -1,42 +1,51 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
-const logger = require("morgan");
-const bodyParser = require("body-parser");
-const SgbRouter_1 = require("./routes/SgbRouter");
-const SgbRouterV2_1 = require("./routes/SgbRouterV2");
+exports.__esModule = true;
+var express = require("express");
+var logger = require("morgan");
+var CourseRouter_1 = require("./routes/CourseRouter");
+var ScheduleRouter_1 = require("./routes/ScheduleRouter");
+var SessionRouter_1 = require("./routes/SessionRouter");
+var StudentRouter_1 = require("./routes/StudentRouter");
+var TeacherRouter_1 = require("./routes/TeacherRouter");
 // Creates and configures an ExpressJS web server.
-class App {
+var App = /** @class */ (function () {
     //Run configuration methods on the Express instance.
-    constructor() {
+    function App() {
         this.express = express();
         this.middleware();
         this.routes();
     }
     // Configure Express middleware.
-    middleware() {
+    App.prototype.middleware = function () {
         this.express.use(logger('dev'));
-        this.express.use(bodyParser.json());
-        this.express.use(bodyParser.urlencoded({ extended: false }));
-    }
+        this.express.use(express.json());
+        this.express.use(express.urlencoded({ extended: false }));
+    };
     // Configure API endpoints.
-    routes() {
+    App.prototype.routes = function () {
         /* This function will change when we start to add more
          * API endpoints */
-        let router = express.Router();
-        // placeholder route handler
-        // router.get('/', (req, res, next) => {
-        //   res.json({
-        //     message: 'Bonjour monde!'
-        //   });
-        // });
+        var router = express.Router();
+        /**
+             * @api {get} /dcl
+             * @apiGroup Documentation
+             * @apiDescription  Afficher le diagramme de classe
+             */
+        // router.get('/dcl', function (req, res) {
+        //   res.redirect('/docs/dcl.svg');
+        // })
         router.get('/', function (req, res) {
             res.redirect('/docs/index.html');
         });
-        this.express.use('/', router); // routage de base
-        this.express.use('/api/v1', SgbRouter_1.sgbRoutes.router); // tous les URI pour le scénario du système de gestion des bordereau commencent ainsi
-        this.express.use('/api/v2', SgbRouterV2_1.sgbRoutesV2.router); // tous les URI pour le scénario du système de gestion des bordereau commencent ainsi
+        this.express.use('/api/v3/course', CourseRouter_1.courseRouter.router);
+        this.express.use('/api/v3/Schedule', ScheduleRouter_1.scheduleRouter.router);
+        this.express.use('/api/v3/session', SessionRouter_1.sessionRouter.router);
+        this.express.use('/api/v3/student', StudentRouter_1.studentRouter.router);
+        this.express.use('/api/v3/teacher', TeacherRouter_1.teacherRouter.router);
         this.express.use('/docs', express.static('dist/docs'));
-    }
-}
-exports.default = new App().express;
+        this.express.use('/dcl', express.static('dist/docs/dcl.svg'));
+        this.express.use('/', router); // routage de base
+    };
+    return App;
+}());
+exports["default"] = new App().express;

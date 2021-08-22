@@ -1,7 +1,13 @@
 interface EntityJSON {
-  id: number;
+  id: string;
 }
 
+interface SessionJSON extends EntityJSON {
+  id: string;
+  name: string;
+  start: string;
+  end: string;
+}
 interface UserJSON extends EntityJSON {
   first_name: string;
   last_name: string;
@@ -9,23 +15,20 @@ interface UserJSON extends EntityJSON {
   permanent_code: string;
 }
 
-export interface CourseStudentJSON extends EntityJSON {
-  student_id: number;
-  course_id: number;
-}
 
-export interface CourseTeacherJSON extends EntityJSON {
-  teacher_id: number;
-  course_id: number;
+export interface ScheduleJSON extends EntityJSON {
+  group_id: string;
+  day: string;
+  hours: string;
+  activity: string;
+  mode: string
+  local: string
+  teacher_id: string
 }
-
 export interface CourseJSON extends EntityJSON {
-  sigle: string;
-  nb_max_student: number;
-  groupe: string;
+  id: string;
+  prealable: string;
   titre: string;
-  date_debut: string;
-  date_fin: string;
 }
 
 export interface StudentJSON extends UserJSON {
@@ -33,7 +36,7 @@ export interface StudentJSON extends UserJSON {
 }
 
 export interface TeacherJSON extends UserJSON {
-
+  
 }
 
 

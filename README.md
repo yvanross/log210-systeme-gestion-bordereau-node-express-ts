@@ -1,6 +1,9 @@
-# Système de gestion des bordereau utilisé dans le cadre du cours de LOG210 et développé avec Node, Express et TypeScript
+# Système de gestion des bordereau 
+Application utilisée dans le cadre du cours de LOG210 et développée avec Node, Express et TypeScript
 
-[Voir la documentation en ligne]( https://cc-yvanross.github.io/8e8addd727f14edfd8c50bd99633c611956f0439/dist/docs/index.html).
+## Diagramme de classe (généré par tplant)
+
+![dcl](dist/docs/dcl.svg)
 
 Ce système doit être utilisé pour obtenir l'information de base à la réalisation de votre laboratoire en LOG210. Il possède les qualités suivantes:
 
@@ -15,22 +18,16 @@ Ce système doit être utilisé pour obtenir l'information de base à la réalis
 
 1. (Créer une fork et) Cloner
 4. Installer les dépendences node - ```npm install```
-5. compiler le code - ```npm run build```
-7. Lancer serveur de développement - ```npm start```
-8. Lancer les tests (pas besoin de lancer le serveur d'abord) - ```npm run test```
-9. Lancer les tests en mode TDD - ```npm run watch```
+5. Compiler les sources - ```npm compile```
+6. Lancer serveur de développement - ```npm start```
+7. Lancer les tests (pas besoin de lancer le serveur d'abord) - ```npm run test```
+8. Lancer les tests en mode TDD - ```npm run watch```
+1. Lancer un seul test - ```npm run test -- -g "nom ou partie du nom d'un test"```
 
-## Exécution des test
-npm run test -- -g "nom ou partie du nom d'un test"
-npm run test
-
-see https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0a40
-
-## Pour exécuter un test unitaire
-**npm run test** -- -g 'responds with successful call for students with valid teacher token'
+voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0a40
 
 ## définition de l'API
-6. Générer la documentation - ```npm run docs```
- http://127.0.0.1:3001/docs/index
- http://localhost:3001/docs/index
+6. Générer la documentation - ```npm run docs ou npm run compile```
+ http://127.0.0.1:3200/docs/index
+ http://localhost:3200/docs/index
 

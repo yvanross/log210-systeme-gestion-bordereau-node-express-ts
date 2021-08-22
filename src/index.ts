@@ -1,16 +1,13 @@
-import http from 'http';
+import * as http from 'http';
 import debug from 'debug';
 
 import App from './App';
 
 debug('ts-express:server');
-
-const port = normalizePort(process.env.PORT || 3001);
-// console.log("Start server on port: ", port)
-// console.log("Regarer le fichier README.md pour la définition des interfaces")
+const port = normalizePort(process.env.PORT || 3200);
 
 console.log("Starting server on port: ", port);
-console.log("use http://localhost:3001/docs/index.html to access server documentation");
+console.log("use http://localhost:3200/docs/index.html to access server documentation");
 
 
 App.set('port', port);

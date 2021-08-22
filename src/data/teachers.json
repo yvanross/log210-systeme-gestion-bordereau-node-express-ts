@@ -1,50 +1,43 @@
 [
   {
-    "id": 1,
-    "first_name": "firstname1",
-    "last_name": "last_name1",
-    "email": "teacher+1@gmail.com"
+    "first_name": "Vincent",
+    "last_name": "Lacasse",
+    "id": "cc-vincent.lacasse@etsmtl.ca"
   },
   {
-    "id": 2,
-    "first_name": "firstname2",
-    "last_name": "last_name2",
-    "email": "teacher+2@gmail.com"
+    "first_name": "Benoit",
+    "last_name": "Galarneau",
+    "id": "cc-benoit.galarneau@etsmtl.ca"
   },
   {
-    "id": 3,
-    "first_name": "firstname3",
-    "last_name": "last_name3",
-    "email": "teacher+3@gmail.com"
+    "first_name": "Patrick",
+    "last_name": "Tremblay",
+    "id": "cc-patrick.tremblay@etsmtl.ca"
   },
   {
-    "id": 4,
-    "first_name": "firstname4",
-    "last_name": "last_name4",
-    "email": "teacher+4@gmail.com"
+    "first_name": "Yvan",
+    "last_name": "Ross",
+    "id": "cc-yvan.ross@etsmtl.ca"
   },
   {
-    "id": 5,
-    "first_name": "firstname5",
-    "last_name": "last_name5",
-    "email": "teacher+5@gmail.com"
+    "first_name": "Christopher",
+    "last_name": "Fuhrman",
+    "id": "christopher.fuhrman@etsmtl.ca"
   },
   {
-    "id": 6,
-    "first_name": "firstname6",
-    "last_name": "last_name6",
-    "email": "teacher+6@gmail.com"
+    "first_name": "Francis",
+    "last_name": "Cardinal",
+    "id": "francis.cardinal@etsmtl.ca"
   },
   {
-    "id": 7,
-    "first_name": "firstname7",
-    "last_name": "last_name7",
-    "email": "teacher+7@gmail.com"
+    "first_name": "Pierre",
+    "last_name": "Dumouchel",
+    "id": "pierre.dumouchel@etsmtl.ca"
   },
   {
-    "id": 8,
-    "first_name": "firstname8",
-    "last_name": "last_name8",
-    "email": "teacher+8@gmail.com"
+    "first_name": "Yves",
+    "last_name": "Durocher",
+    "id": "yves.durocher@etsmtl.ca"
   }
+ 
 ]

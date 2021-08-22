@@ -8,7 +8,6 @@
     "**/*.ts"
   ],
   "exclude": [
-    "gulpfile.js",
     "src/index.ts",
     "dist/**",
     "coverage/**",

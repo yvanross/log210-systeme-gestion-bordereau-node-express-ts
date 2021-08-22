@@ -11,8 +11,7 @@ class Student {
     +permanent_code(): string
     +followCourse(course_id: number): boolean
     +courses(): any[]
-    +{static} login(email: string, password: string): any
-    +{static} loginV2(email: string, password: string): any[]
+    +{static} login(email: string, password: string): any[]
     +{static} fromId(id: number): Student
     +{static} fromToken(token: string): Student
 }
@@ -45,8 +44,7 @@ class Teacher {
     +email(): string
     +giveCourse(course_id: number): boolean
     +courses(): any[]
-    +{static} login(email: string, password: string): any
-    +{static} loginV2(email: string, password: string): any[]
+    +{static} login(email: string, password: string): any[]
     +{static} fromId(id: number): Teacher
     +{static} fromToken(token: string): Teacher
 }

@@ -2,7 +2,11 @@ interface EntityJSON {
   id: string;
 }
 
-interface SessionJSON extends EntityJSON {
+interface GroupStudentJSON{
+  group_id: string;
+  student_id: string;
+}
+interface SemesterJSON extends EntityJSON {
   id: string;
   name: string;
   start: string;

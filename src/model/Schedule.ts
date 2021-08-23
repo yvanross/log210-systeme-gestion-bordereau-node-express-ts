@@ -2,9 +2,15 @@ import type { ScheduleJSON } from "../data";
 
 export class Schedule {
   static all(): ScheduleJSON[]{
-    let Schedules: ScheduleJSON[] = require('../data/Schedule.json');
-    return Schedules;
+    let schedules: ScheduleJSON[] = require('../data/Schedule.json');
+    return schedules;
   }
+
+  static groups(): string[]{
+    const uniqueGroup =  [... new Set(Schedule.all().map(item => item.group_id))];
+    return uniqueGroup;
+  }
+ 
 
 }
  

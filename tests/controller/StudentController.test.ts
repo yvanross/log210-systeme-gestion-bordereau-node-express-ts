@@ -1,6 +1,6 @@
 import chai from 'chai';
 import { StudentController } from '../../src/controller/StudentController';
-import type { StudentJSON } from '../../src/data';
+import type { GroupStudentJSON, StudentJSON } from '../../src/data';
 import {Student} from '../../src/model/Student'
 
 import chaiHttp from 'chai-http';
@@ -25,6 +25,13 @@ describe('StudentControllerTest', () => {
   it('get all students', () => {
     let controller: StudentController = new StudentController();
     expect(controller.all().length).to.equal(100)
+  })
+
+  it('must get groupstudent', () => {
+    let controller: StudentController = new StudentController();
+    let groupStudent: GroupStudentJSON[] = controller.groupStudent();
+    expect(groupStudent.length).to.equal(100);
+    expect(groupStudent[0]).to.deep.equal( {"group_id": "S20213-LOG121-01", "student_id": "first_name.last_name+1@gmail.com"})
   })
 
 });

@@ -3,7 +3,7 @@ import logger = require('morgan');
 
 import { courseRouter } from './routes/CourseRouter';
 import { scheduleRouter } from './routes/ScheduleRouter';
-import { sessionRouter } from './routes/SessionRouter';
+import { semesterRouter } from './routes/SemesterRouter';
 import { studentRouter } from './routes/StudentRouter';
 import { teacherRouter } from './routes/TeacherRouter';
 import { healtRouter } from './routes/HealtRouter';
@@ -51,7 +51,7 @@ class App {
     this.express.use('/api/v3/healt', healtRouter.router);
     this.express.use('/api/v3/course',courseRouter.router)
     this.express.use('/api/v3/Schedule',scheduleRouter.router)
-    this.express.use('/api/v3/session',sessionRouter.router)
+    this.express.use('/api/v3/semester',semesterRouter.router)
     this.express.use('/api/v3/student',studentRouter.router)
     this.express.use('/api/v3/teacher',teacherRouter.router)
     this.express.use('/docs', express.static('dist/docs'));

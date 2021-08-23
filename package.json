@@ -9,7 +9,7 @@
         "test": "jest --coverage",
         "watch": "jest --coverage --watchAll",
         "docs": "apidoc -i src/routes/ -o dist/docs/",
-        "tplant":"tplant --input src/*.ts -A --output dist/docs/dcl.svg",
+        "tplant":"tplant --input src/App.ts -A --output dist/docs/dcl.svg",
         "circular": "madge src/App.ts -c",
         "madge": "madge src/App.ts -i madge.png; open madge.png",
         "precompile": "npm run clean",

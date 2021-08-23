@@ -1,9 +1,9 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { SessionController } from '../controller/SessionController';
+import { SemesterController } from '../controller/SemesterController';
 
-export class SessionRouter {
+export class SemesterRouter {
   router: Router;
-  controller: SessionController;
+  controller: SemesterController;
   router_latency: number;
   
   /**
@@ -11,7 +11,7 @@ export class SessionRouter {
   */
   constructor() {
     this.router_latency = 0;
-    this.controller = new SessionController();
+    this.controller = new SemesterController();
     this.router = Router();
     this.init();
   }
@@ -38,7 +38,7 @@ export class SessionRouter {
     /**
     * Take each handler, and attach to one of the Express.Router's
     * endpoints.
-    * @api {get} api/v3/session/all all
+    * @api {get} api/v3/semester/all all
     * @apiGroup Session
     * @apiDescription Récupérer la liste de toutes les sessions
     * @apiVersion 3.0.0
@@ -61,5 +61,5 @@ export class SessionRouter {
 }
 
 // exporter its configured Express.Router
-export const sessionRouter = new SessionRouter();
-sessionRouter.init();
+export const semesterRouter = new SemesterRouter();
+semesterRouter.init();

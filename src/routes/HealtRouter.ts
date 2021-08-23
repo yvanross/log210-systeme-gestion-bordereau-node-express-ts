@@ -36,7 +36,7 @@ export class HealtRouter {
     * @apiDescription Echo pour confirmer le fonctionnement de SGB
     * @apiVersion 3.0.0
     *
-    * @apiSuccess (200) 
+    * @apiSuccess (200) Success
     */
     this.router.get('/ping', this.ping.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
     

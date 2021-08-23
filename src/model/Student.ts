@@ -1,5 +1,9 @@
 import md5 = require('md5');
 import { User } from './User';
+import { Schedule } from './Schedule';
+import { GroupStudentJSON } from '../data';
+import { ModuleResolutionKind } from 'typescript';
+
 
 export class Student extends User {
 
@@ -29,5 +33,19 @@ export class Student extends User {
     }
     return students;
   }
+  
+  static groupStudent(): GroupStudentJSON[] {
+    let students = Student.all();
+    let groups = Schedule.groups();
+    let nbStudentByGroup = students.length / groups.length;
 
+    nbStudentByGroup = Math.round(nbStudentByGroup);
+    let groupStudentArray: GroupStudentJSON[] = [];
+    for (let iStudent = 0; iStudent < students.length; iStudent++){
+      let igroup = iStudent % groups.length;
+      let group_student  = { group_id: groups[igroup], student_id: students[iStudent].id };
+      groupStudentArray.push(group_student);
+    }
+    return groupStudentArray;
+  }
 }

@@ -1,6 +1,6 @@
 
 import { Student } from '../model/Student';
-import type { StudentJSON } from '../data';
+import type { GroupStudentJSON, StudentJSON } from '../data';
 
 // classe contrôleur GRASP
 export class StudentController {
@@ -25,4 +25,7 @@ export class StudentController {
     return Student.all();
   }
   
+  public groupStudent():GroupStudentJSON[] {
+  return Student.groupStudent();
+  }
 }

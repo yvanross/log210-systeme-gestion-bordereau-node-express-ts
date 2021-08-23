@@ -25,6 +25,29 @@
   },
   {
     "type": "get",
+    "url": "api/v3/healt/ping",
+    "title": "ping",
+    "group": "Healt",
+    "description": "<p>Echo pour confirmer le fonctionnement de SGB</p>",
+    "version": "3.0.0",
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "optional": false,
+            "field": "Success",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "src/routes/HealtRouter.ts",
+    "groupTitle": "Healt",
+    "name": "GetApiV3HealtPing"
+  },
+  {
+    "type": "get",
     "url": "api/v3/Schedule/all",
     "title": "all",
     "group": "Schedule",

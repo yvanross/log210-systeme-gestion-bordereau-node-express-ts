@@ -20,6 +20,6 @@ describe('AppRouterTest', () => {
       expect(res.status).to.equal(200);
       expect(res).to.be.html;
     }, 10000);
-  
+
 });
 

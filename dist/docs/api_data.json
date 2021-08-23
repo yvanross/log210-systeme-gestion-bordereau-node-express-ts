@@ -174,7 +174,7 @@
             "type": "String",
             "optional": false,
             "field": "token",
-            "description": "<p>Authentification token à inclure dans le header des requêtes subséquentes</p>"
+            "description": "<p>Authentification token à inclure dans les requêtes subséquentes</p>"
           },
           {
             "group": "200",
@@ -293,7 +293,7 @@
             "type": "String",
             "optional": false,
             "field": "token",
-            "description": "<p>Authentification token à inclure dans le header des requêtes subséquentes</p>"
+            "description": "<p>Authentification token à inclure dans les requêtes subséquentes</p>"
           },
           {
             "group": "200",

@@ -44,7 +44,7 @@ describe('StudentsRouter', () => {
     const res = await chai.request(app).get('/api/v3/student/fromtoken?token=e649905a37aa58c397647862118e3474')
     expect(res.status).to.equal(200);
     expect(res).to.be.json;
-    expect(res.body).to.deep.equal({"message": "Success", "user": {"_first_name": "first_name_1", "_id": "first_name.last_name+1@gmail.com", "_last_name": "last_name_1"}}
+    expect(res.body).to.deep.equal({"message": "Success", "user": {"first_name": "first_name_1", "id": "first_name.last_name+1@gmail.com", "last_name": "last_name_1"}}
     );
   }, 10000);
   

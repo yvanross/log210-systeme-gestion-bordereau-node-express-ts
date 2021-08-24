@@ -86,7 +86,7 @@ export class StudentRouter {
       /**
       * Take each handler, and attach to one of the Express.Router's
       * endpoints.
-      * @api {get} api/v3/student/login?email=email&password=password   login
+      * @api {get} /api/v3/student/login  login
       * @apiGroup Student
       * @apiDescription Authentification de l'étudiant et récupération du token d'authentification
       * @apiVersion 3.0.0
@@ -102,7 +102,7 @@ export class StudentRouter {
       /**
       * Take each handler, and attach to one of the Express.Router's
       * endpoints.
-      * @api {get} api/v3/student/all all
+      * @api {get} /api/v3/student/all all
       * @apiGroup Student
       * @apiDescription récupération de tout les enseignant
       * @apiVersion 3.0.0
@@ -119,7 +119,7 @@ export class StudentRouter {
       /**
       * Take each handler, and attach to one of the Express.Router's
       * endpoints.
-      * @api {get} api/v3/student/fromtoken fromtoken
+      * @api {get} /api/v3/student/fromtoken fromtoken
       * @apiGroup Student
       * @apiDescription Récupérer un étudiant à partir de son token
       * @apiVersion 3.0.0
@@ -138,7 +138,7 @@ export class StudentRouter {
       /**
       * Take each handler, and attach to one of the Express.Router's
       * endpoints.
-      * @api {get} api/v3/student/groupstudent groupstudent
+      * @api {get} /api/v3/student/groupstudent groupstudent
       * @apiGroup Student
       * @apiDescription Récupérer le lien entre les étudiants et les groupes
       * @apiVersion 3.0.0

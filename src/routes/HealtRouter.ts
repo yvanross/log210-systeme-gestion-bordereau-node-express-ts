@@ -31,7 +31,7 @@ export class HealtRouter {
     /**
     * Take each handler, and attach to one of the Express.Router's
     * endpoints.
-    * @api {get} api/v3/healt/ping ping
+    * @api {get} /api/v3/healt/ping ping
     * @apiGroup Healt
     * @apiDescription Echo pour confirmer le fonctionnement de SGB
     * @apiVersion 3.0.0

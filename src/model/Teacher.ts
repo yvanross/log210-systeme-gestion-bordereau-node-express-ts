@@ -1,8 +1,7 @@
 import md5 = require('md5');
-import  { TeacherJSON } from '../data';
-import { User } from './User';
+import  { TeacherJSON } from '.';
 
-export class Teacher extends User {
+export class Teacher  {
 
   static login(email: string, password: string) {
     const teachers: TeacherJSON[] = require('../data/teachers.json');

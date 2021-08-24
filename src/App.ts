@@ -7,6 +7,7 @@ import { semesterRouter } from './routes/SemesterRouter';
 import { studentRouter } from './routes/StudentRouter';
 import { teacherRouter } from './routes/TeacherRouter';
 import { healtRouter } from './routes/HealtRouter';
+import { gradeRouter} from './routes/GradeRouter';
 
 
 // Creates and configures an ExpressJS web server.
@@ -53,7 +54,8 @@ class App {
     this.express.use('/api/v3/Schedule',scheduleRouter.router)
     this.express.use('/api/v3/semester',semesterRouter.router)
     this.express.use('/api/v3/student',studentRouter.router)
-    this.express.use('/api/v3/teacher',teacherRouter.router)
+    this.express.use('/api/v3/teacher', teacherRouter.router)
+    this.express.use('/api/v3/grade',gradeRouter.router)
     this.express.use('/docs', express.static('dist/docs'));
     this.express.use('/dcl', express.static('dist/docs/dcl.svg'));
     this.express.use('/', router);  // routage de base

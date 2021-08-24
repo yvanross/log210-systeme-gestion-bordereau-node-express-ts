@@ -1,7 +1,7 @@
 import chai from 'chai';
 import { TeacherController } from '../../src/controller/TeacherController';
 import chaiHttp from 'chai-http';
-import type { TeacherJSON } from '../../src/data';
+import type { TeacherJSON } from '../../src/model';
 
 chai.use(chaiHttp);
 const expect = chai.expect;

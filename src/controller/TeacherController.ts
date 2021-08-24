@@ -1,5 +1,5 @@
 import { Teacher } from '../model/Teacher';
-import type { TeacherJSON } from '../data';
+import type { TeacherJSON } from '../model';
 
 // classe contrôleur GRASP
 export class TeacherController {

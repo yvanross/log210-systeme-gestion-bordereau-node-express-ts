@@ -72,7 +72,7 @@ export class TeacherRouter {
     init() {
       
       /**
-      * @api {get} api/v3/teacher/login?email=email&password=password login
+      * @api {get} /api/v3/teacher/login login
       * @apiGroup Teacher
       * @apiDescription Authentification de l'usager et récupération du token d'authentification
       * @apiVersion 3.0.0
@@ -90,7 +90,7 @@ export class TeacherRouter {
       this.router.get('/login', this.login.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
       
       /**
-      * @api {get} api/v3/teacher/all all
+      * @api {get}/api/v3/teacher/all all
       * @apiGroup Teacher
       * @apiDescription récupération de tout les enseignant
       * @apiVersion 3.0.0
@@ -104,7 +104,7 @@ export class TeacherRouter {
       
       
       /**
-      * @api {get} api/v3/teacher/fromtoken fromtoken
+      * @api {get} /api/v3/teacher/fromtoken fromtoken
       * @apiGroup Teacher
       * @apiDescription Récupérer un enseignant à partir de son token
       * @apiVersion 3.0.0

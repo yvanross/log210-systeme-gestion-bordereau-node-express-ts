@@ -1,7 +1,7 @@
 define({ "api": [
   {
     "type": "get",
-    "url": "api/v3/course/all",
+    "url": "/api/v3/course/all",
     "title": "all",
     "group": "Cours",
     "description": "<p>Récupérer la liste de tous les cours</p>",
@@ -14,7 +14,7 @@ define({ "api": [
             "type": "JSDON",
             "optional": false,
             "field": "data",
-            "description": "<p>[ { id: string, prealable: string, titre: string } ]</p>"
+            "description": "<p>[ { id: string, titre: string } ]</p>"
           }
         ]
       }
@@ -25,7 +25,146 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v3/healt/ping",
+    "url": "/api/v3/grade/group",
+    "title": "group",
+    "group": "Grade",
+    "description": "<p>Liste des notes d'un groupe</p>",
+    "version": "3.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "group_id",
+            "description": "<p>Identifiant du groupe</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "JSON",
+            "optional": false,
+            "field": "data",
+            "description": "<p>[ { student_id:string, group_id:string, type:string, type_id:integer, note: number } ]</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/routes/GradeRouter.ts",
+    "groupTitle": "Grade",
+    "name": "GetApiV3GradeGroup"
+  },
+  {
+    "type": "get",
+    "url": "/api/v3/grade/insert",
+    "title": "insert",
+    "group": "Grade",
+    "description": "<p>Insérer une note associé à un étudiant, un groupe cours et de devoir ou questionnaire</p>",
+    "version": "3.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "student_id",
+            "description": "<p>Identifiant de l'étudiant</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "group_id",
+            "description": "<p>Identifiant du groupe</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>Nom de la classe correspondant au type de travail</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": false,
+            "field": "type_id",
+            "description": "<p>Identifiant du travail</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "note",
+            "description": "<p>Note obtenu pour ce travail</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "JSON",
+            "optional": false,
+            "field": "data",
+            "description": "<p>[ { student_id:string, group_id:string, type:string, type_id:integer, note: number } ]</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/routes/GradeRouter.ts",
+    "groupTitle": "Grade",
+    "name": "GetApiV3GradeInsert"
+  },
+  {
+    "type": "get",
+    "url": "/api/v3/grade/student",
+    "title": "student",
+    "group": "Grade",
+    "description": "<p>Liste des notes d'un étudiant</p>",
+    "version": "3.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "student_id",
+            "description": "<p>Identifiant de l'étudiant</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "JSON",
+            "optional": false,
+            "field": "data",
+            "description": "<p>[ { student_id: string, group_id:string, type:string, type_id:integer, note: number } ]</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/routes/GradeRouter.ts",
+    "groupTitle": "Grade",
+    "name": "GetApiV3GradeStudent"
+  },
+  {
+    "type": "get",
+    "url": "/api/v3/healt/ping",
     "title": "ping",
     "group": "Healt",
     "description": "<p>Echo pour confirmer le fonctionnement de SGB</p>",
@@ -48,7 +187,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v3/Schedule/all",
+    "url": "/api/v3/Schedule/all",
     "title": "all",
     "group": "Schedule",
     "description": "<p>Récupérer la liste de tous les Schedules</p>",
@@ -72,10 +211,10 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v3/session/all",
+    "url": "/api/v3/semester/all",
     "title": "all",
-    "group": "Session",
-    "description": "<p>Récupérer la liste de toutes les sessions</p>",
+    "group": "Semester",
+    "description": "<p>Récupérer la liste de tous les semestres</p>",
     "version": "3.0.0",
     "success": {
       "fields": {
@@ -90,13 +229,13 @@ define({ "api": [
         ]
       }
     },
-    "filename": "src/routes/SessionRouter.ts",
-    "groupTitle": "Session",
-    "name": "GetApiV3SessionAll"
+    "filename": "src/routes/SemesterRouter.ts",
+    "groupTitle": "Semester",
+    "name": "GetApiV3SemesterAll"
   },
   {
     "type": "get",
-    "url": "api/v3/student/all",
+    "url": "/api/v3/student/all",
     "title": "all",
     "group": "Student",
     "description": "<p>récupération de tout les enseignant</p>",
@@ -120,7 +259,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v3/student/fromtoken",
+    "url": "/api/v3/student/fromtoken",
     "title": "fromtoken",
     "group": "Student",
     "description": "<p>Récupérer un étudiant à partir de son token</p>",
@@ -157,7 +296,31 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v3/student/login?email=email&password=password",
+    "url": "/api/v3/student/groupstudent",
+    "title": "groupstudent",
+    "group": "Student",
+    "description": "<p>Récupérer le lien entre les étudiants et les groupes</p>",
+    "version": "3.0.0",
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "JSON",
+            "optional": false,
+            "field": "data",
+            "description": "<p>[{ group_id: string, student_id: string }</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/routes/StudentRouter.ts",
+    "groupTitle": "Student",
+    "name": "GetApiV3StudentGroupstudent"
+  },
+  {
+    "type": "get",
+    "url": "/api/v3/student/login",
     "title": "login",
     "group": "Student",
     "description": "<p>Authentification de l'étudiant et récupération du token d'authentification</p>",
@@ -211,11 +374,11 @@ define({ "api": [
     },
     "filename": "src/routes/StudentRouter.ts",
     "groupTitle": "Student",
-    "name": "GetApiV3StudentLoginEmailEmailPasswordPassword"
+    "name": "GetApiV3StudentLogin"
   },
   {
     "type": "get",
-    "url": "api/v3/teacher/all",
+    "url": "/api/v3/teacher/all",
     "title": "all",
     "group": "Teacher",
     "description": "<p>récupération de tout les enseignant</p>",
@@ -239,7 +402,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v3/teacher/fromtoken",
+    "url": "/api/v3/teacher/fromtoken",
     "title": "fromtoken",
     "group": "Teacher",
     "description": "<p>Récupérer un enseignant à partir de son token</p>",
@@ -276,7 +439,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v3/teacher/login?email=email&password=password",
+    "url": "/api/v3/teacher/login",
     "title": "login",
     "group": "Teacher",
     "description": "<p>Authentification de l'usager et récupération du token d'authentification</p>",
@@ -330,6 +493,6 @@ define({ "api": [
     },
     "filename": "src/routes/TeacherRouter.ts",
     "groupTitle": "Teacher",
-    "name": "GetApiV3TeacherLoginEmailEmailPasswordPassword"
+    "name": "GetApiV3TeacherLogin"
   }
 ] });

@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import md5 from 'md5';
-import { SemesterJSON } from '../../src/data';
+import { SemesterJSON } from '../../src/model';
 import { Semester } from '../../src/model/Semester';
 
 chai.use(chaiHttp);

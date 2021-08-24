@@ -1,6 +1,6 @@
 import chai from 'chai';
 import { StudentController } from '../../src/controller/StudentController';
-import type { GroupStudentJSON, StudentJSON } from '../../src/data';
+import type { GroupStudentJSON, StudentJSON } from '../../src/model';
 import {Student} from '../../src/model/Student'
 
 import chaiHttp from 'chai-http';

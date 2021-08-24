@@ -18,7 +18,7 @@ Ce système doit être utilisé pour obtenir l'information de base à la réalis
 
 1. (Créer une fork et) Cloner
 4. Installer les dépendences node - ```npm install```
-5. Compiler les sources - ```npm compile```
+5. Compiler les sources - ```npm run compile```
 6. Lancer serveur de développement - ```npm start```
 7. Lancer les tests (pas besoin de lancer le serveur d'abord) - ```npm run test```
 8. Lancer les tests en mode TDD - ```npm run watch```

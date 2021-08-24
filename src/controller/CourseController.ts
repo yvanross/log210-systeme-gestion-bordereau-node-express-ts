@@ -1,6 +1,6 @@
 import { Course } from '../model/Course';
 
-import type { CourseJSON } from "../data";
+import type { CourseJSON } from "../model";
 
 // classe contrôleur de session GRASP
 export class CourseController {

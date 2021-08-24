@@ -38,9 +38,9 @@ export class SemesterRouter {
     /**
     * Take each handler, and attach to one of the Express.Router's
     * endpoints.
-    * @api {get} api/v3/semester/all all
-    * @apiGroup Session
-    * @apiDescription Récupérer la liste de toutes les sessions
+    * @api {get} /api/v3/semester/all all
+    * @apiGroup Semester
+    * @apiDescription Récupérer la liste de tous les semestres
     * @apiVersion 3.0.0
     *
     * @apiSuccess (200) {JSON} data

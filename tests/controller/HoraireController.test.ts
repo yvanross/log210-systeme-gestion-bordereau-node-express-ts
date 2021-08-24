@@ -1,7 +1,7 @@
 import chai from 'chai';
 import { ScheduleController } from '../../src/controller/ScheduleController';
 import chaiHttp from 'chai-http';
-import type { ScheduleJSON } from "../../src/data";
+import type { ScheduleJSON } from "../../src/model";
 
 chai.use(chaiHttp);
 const expect = chai.expect;

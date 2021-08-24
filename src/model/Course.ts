@@ -1,4 +1,4 @@
-import type { CourseJSON } from "../data";
+import type { CourseJSON } from ".";
 
 export class Course {
   static all() {

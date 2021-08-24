@@ -1,4 +1,4 @@
-import type { ScheduleJSON } from "../data";
+import type { ScheduleJSON } from ".";
 
 export class Schedule {
   static all(): ScheduleJSON[]{

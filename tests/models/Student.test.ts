@@ -15,7 +15,7 @@ describe('StudentTest', () => {
 
   it('get student by Token', () => {
     let student = Student.fromToken(md5('first_name.last_name+1@gmail.com') as string);
-    expect(student.id()).to.equal('first_name.last_name+1@gmail.com');
+    expect(student.id).to.equal('first_name.last_name+1@gmail.com');
   });
 
   it('login', () => {

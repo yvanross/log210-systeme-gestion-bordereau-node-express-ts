@@ -1,26 +1,34 @@
-interface EntityJSON {
-  id: string;
-}
+// interface EntityJSON {
+//   id: string;
+// }
+
 
 interface GroupStudentJSON{
   group_id: string;
   student_id: string;
 }
-interface SemesterJSON extends EntityJSON {
-  id: string;
+
+interface SemesterJSON  {
   name: string;
   start: string;
   end: string;
 }
-interface UserJSON extends EntityJSON {
+interface UserJSON  {
   first_name: string;
   last_name: string;
-  email: string;
-  permanent_code: string;
+  id: string;
 }
 
+interface validUserJSON  {
+  token: string;
+  user: {
+    first_name: string;
+    last_name: string;
+    id: string;
+  }
+}
 
-export interface ScheduleJSON extends EntityJSON {
+export interface ScheduleJSON  {
   group_id: string;
   day: string;
   hours: string;
@@ -29,18 +37,26 @@ export interface ScheduleJSON extends EntityJSON {
   local: string
   teacher_id: string
 }
-export interface CourseJSON extends EntityJSON {
+
+export interface CourseJSON  {
   id: string;
   prealable: string;
   titre: string;
 }
 
 export interface StudentJSON extends UserJSON {
-  permanent_code: string;
 }
 
 export interface TeacherJSON extends UserJSON {
   
+}
+
+export interface GradeJSON {
+  student_id: string;
+  group_id: string;
+  type: string;
+  type_id: integer;
+  note: number;
 }
 
 

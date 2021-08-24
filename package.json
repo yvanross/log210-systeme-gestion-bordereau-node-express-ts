@@ -8,14 +8,15 @@
         "start": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js & open http://127.0.0.1:3200",
         "test": "jest --coverage",
         "watch": "jest --coverage --watchAll",
-        "docs": "apidoc -i src/routes/ -o dist/docs/",
-        "tplant":"tplant --input src/App.ts -A --output dist/docs/dcl.svg",
+        "docs": "apidoc -i src/routes/ -o dist/docs/", 
+        "tplant":"tplant --input src/App.ts  -A --output dist/docs/dcl.svg",
         "circular": "madge src/App.ts -c",
         "madge": "madge src/App.ts -i madge.png; open madge.png",
         "precompile": "npm run clean",
         "clean": "rimraf dist/* & npm run docs & npm run tplant",
         "compile": "npm run compile:ts",
-        "compile:ts": "tsc --outDir ./dist --module commonjs ./src/index.ts"
+        "compile:ts": "tsc --outDir ./dist --module commonjs --downlevelIteration ./src/index.ts",
+        "postcompile": "cp -R src/data dist/data"
     },
     "watch": {
         "test": "{src,tests}/*.js"

@@ -1,4 +1,4 @@
-import type { SemesterJSON } from "../data";
+import type { SemesterJSON } from ".";
 
 export class Semester {
   static all() {

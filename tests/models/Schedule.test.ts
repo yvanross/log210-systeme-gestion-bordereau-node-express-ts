@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import md5 from 'md5';
-import { ScheduleJSON } from '../../src/data';
+import { ScheduleJSON } from '../../src/model';
 import { Schedule } from '../../src/model/Schedule';
 
 chai.use(chaiHttp);

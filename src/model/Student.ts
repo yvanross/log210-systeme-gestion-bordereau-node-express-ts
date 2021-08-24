@@ -1,32 +1,26 @@
 import md5 = require('md5');
-import { User } from './User';
 import { Schedule } from './Schedule';
-import { GroupStudentJSON } from '../data';
-import { ModuleResolutionKind } from 'typescript';
+import { GroupStudentJSON } from '.';
+import {validUserJSON, StudentJSON} from '.'
 
+export class Student{
 
-export class Student extends User {
-
-  static login(email: string, password: string) {
+  static login(email: string, password: string) : validUserJSON {
     const student = Student.all().find(student => email == student.id);
     return student ? { token: md5(email), user: student } : null;
   }
 
-  static fromToken(token: string) {
+  static fromToken(token: string): StudentJSON {
     const student = Student.all().find(student => md5(student.id) == token);
 
     if (!student) {
       throw new Error("Student token not found");
     }
 
-    return new this(
-      student.id,
-      student.first_name,   
-      student.last_name,
-    );
+    return student;
   }
 
-  static all() {
+  static all() : StudentJSON[]{
     let students = []
     for (let i = 1; i <= 100; i++){
       students.push({first_name: `first_name_${i}`,last_name: `last_name_${i}`,id: `first_name.last_name+${i}@gmail.com` })  // console.log(i);

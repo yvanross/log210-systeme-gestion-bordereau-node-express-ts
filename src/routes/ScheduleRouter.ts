@@ -36,7 +36,7 @@ export class ScheduleRouter {
   init() {
     
     /**
-    * @api {get} api/v3/Schedule/all all
+    * @api {get} /api/v3/Schedule/all all
     * @apiGroup Schedule
     * @apiDescription Récupérer la liste de tous les Schedules
     * @apiVersion 3.0.0

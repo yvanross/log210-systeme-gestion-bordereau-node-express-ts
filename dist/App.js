@@ -4,10 +4,11 @@ var express = require("express");
 var logger = require("morgan");
 var CourseRouter_1 = require("./routes/CourseRouter");
 var ScheduleRouter_1 = require("./routes/ScheduleRouter");
-var SessionRouter_1 = require("./routes/SessionRouter");
+var SemesterRouter_1 = require("./routes/SemesterRouter");
 var StudentRouter_1 = require("./routes/StudentRouter");
 var TeacherRouter_1 = require("./routes/TeacherRouter");
 var HealtRouter_1 = require("./routes/HealtRouter");
+var GradeRouter_1 = require("./routes/GradeRouter");
 // Creates and configures an ExpressJS web server.
 var App = /** @class */ (function () {
     //Run configuration methods on the Express instance.
@@ -41,9 +42,10 @@ var App = /** @class */ (function () {
         this.express.use('/api/v3/healt', HealtRouter_1.healtRouter.router);
         this.express.use('/api/v3/course', CourseRouter_1.courseRouter.router);
         this.express.use('/api/v3/Schedule', ScheduleRouter_1.scheduleRouter.router);
-        this.express.use('/api/v3/session', SessionRouter_1.sessionRouter.router);
+        this.express.use('/api/v3/semester', SemesterRouter_1.semesterRouter.router);
         this.express.use('/api/v3/student', StudentRouter_1.studentRouter.router);
         this.express.use('/api/v3/teacher', TeacherRouter_1.teacherRouter.router);
+        this.express.use('/api/v3/grade', GradeRouter_1.gradeRouter.router);
         this.express.use('/docs', express.static('dist/docs'));
         this.express.use('/dcl', express.static('dist/docs/dcl.svg'));
         this.express.use('/', router); // routage de base

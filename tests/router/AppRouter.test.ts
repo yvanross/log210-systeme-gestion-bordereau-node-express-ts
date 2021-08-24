@@ -4,7 +4,7 @@ import md5 from 'md5';
 import app from '../../src/App';
 import { Course } from '../../src/model/Course';
 import { Student } from '../../src/model/Student';
-import type { CourseJSON, StudentJSON } from '../../src/data';
+import type { CourseJSON, StudentJSON } from '../../src/model';
 
 
 

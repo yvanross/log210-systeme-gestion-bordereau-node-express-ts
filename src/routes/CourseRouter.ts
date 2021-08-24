@@ -34,7 +34,7 @@ export class CourseRouter {
     */
     init() {
          /**
-     * @api {get} api/v3/course/all all
+     * @api {get} /api/v3/course/all all
      * @apiGroup Cours
      * @apiDescription Récupérer la liste de tous les cours
      * @apiVersion 3.0.0
@@ -43,7 +43,6 @@ export class CourseRouter {
      * [
      *   {
      *     id: string,
-     *     prealable: string,
      *     titre: string
      *   }
      * ]

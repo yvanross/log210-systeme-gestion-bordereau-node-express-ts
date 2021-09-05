@@ -39,7 +39,7 @@ export class CourseRouter {
      * @apiDescription Récupérer la liste de tous les cours
      * @apiVersion 3.0.0
      *
-     * @apiSuccess (200) {JSDON} data
+     * @apiSuccess (200) {JSON} data
      * [
      *   {
      *     id: string,

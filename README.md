@@ -26,6 +26,12 @@ Ce système doit être utilisé pour obtenir l'information de base à la réalis
 
 voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0a40
 
+## Utiliser ce serveur avec Docker
+- Création de votre image docker
+  - docker build -t sgb --file Dockerfile .
+- Exécuter votre image docker
+  - docker run -p 3200:3200 sgb
+
 ## définition de l'API
 6. Générer la documentation - ```npm run docs ou npm run compile```
  http://127.0.0.1:3200/docs/index

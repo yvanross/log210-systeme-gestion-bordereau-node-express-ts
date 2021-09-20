@@ -6,6 +6,7 @@
     "scripts": {
         "start2": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js & open http://localhost:3200",
         "start": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js & open http://127.0.0.1:3200",
+        "start-docker": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js",
         "test": "jest --coverage",
         "watch": "jest --coverage --watchAll",
         "docs": "apidoc -i src/routes/ -o dist/docs/",

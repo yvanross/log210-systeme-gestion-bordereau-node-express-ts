@@ -1,6 +1,6 @@
 [{
         "id": "LOG121",
-        "prealable": "",
+        "prealable": "none",
         "titre": "Conception orientée object"
     },
     {

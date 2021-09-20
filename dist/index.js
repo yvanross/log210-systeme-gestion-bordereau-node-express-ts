@@ -3,7 +3,7 @@ exports.__esModule = true;
 var http = require("http");
 var debug_1 = require("debug");
 var App_1 = require("./App");
-debug_1["default"]('ts-express:server');
+(0, debug_1["default"])('ts-express:server');
 var port = normalizePort(process.env.PORT || 3200);
 console.log("Starting server on port: ", port);
 console.log("use http://localhost:3200/docs/index.html to access server documentation");
@@ -39,5 +39,5 @@ function onError(error) {
 function onListening() {
     var addr = server.address();
     var bind = (typeof addr === 'string') ? "pipe " + addr : "port " + addr.port;
-    debug_1["default"]("Listening on " + bind);
+    (0, debug_1["default"])("Listening on " + bind);
 }

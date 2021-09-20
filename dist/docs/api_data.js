@@ -11,7 +11,7 @@ define({ "api": [
         "200": [
           {
             "group": "200",
-            "type": "JSDON",
+            "type": "JSON",
             "optional": false,
             "field": "data",
             "description": "<p>[ { id: string, titre: string } ]</p>"

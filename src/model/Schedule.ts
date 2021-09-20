@@ -2,7 +2,7 @@ import type { ScheduleJSON } from ".";
 
 export class Schedule {
   static all(): ScheduleJSON[]{
-    let schedules: ScheduleJSON[] = require('../data/Schedule.json');
+    let schedules: ScheduleJSON[] = require('../data/schedule.json');
     return schedules;
   }
 

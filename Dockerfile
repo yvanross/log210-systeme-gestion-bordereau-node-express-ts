@@ -10,4 +10,4 @@ RUN npm install
 COPY . .
 
 RUN npm run compile
-CMD [ "npm", "start" ]
+CMD [ "npm", "start-docker" ]

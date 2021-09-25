@@ -5,7 +5,7 @@ export class GradeRouter {
   router: Router;
   controller: GradeController;
   router_latency: number;
-  
+
   /**
   * Initialize the Router
   */
@@ -15,23 +15,23 @@ export class GradeRouter {
     this.router = Router();
     this.init();
   }
-  
+
   public insert(req: Request, res: Response, next: NextFunction) {
     let data = this.controller.insert(
       req.query.student_id as string,
       req.query.group_id as string,
       req.query.type as string,
-      req.query.type_id as number,
-      req.query.note as number)
-    
-      res.status(200)
-      .send({
-        message: 'Success',
-        status: res.status,
-        data: data
-      });
-    }
-    
+      parseInt(req.query.type_id as string, 10),
+      parseFloat(req.query.note as string)
+    )
+
+    res.status(200).send({
+      message: 'Success',
+      status: res.status,
+      data: data
+    });
+  }
+
     public student(req: Request, res: Response, next: NextFunction) {
       let data = this.controller.student(req.query.student_id as string)
       res.status(200)
@@ -41,7 +41,7 @@ export class GradeRouter {
         data: data
       });
     }
-    
+
     public group(req: Request, res: Response, next: NextFunction) {
       let data = this.controller.group(req.query.group_id as string)
       res.status(200)
@@ -51,25 +51,25 @@ export class GradeRouter {
         data: data
       });
     }
-    
+
     /**
     * Take each handler, and attach to one of the Express.Router's
     * endpoints.
     */
     init() {
-      
+
       /**
       * @api {get} /api/v3/grade/insert insert
       * @apiGroup Grade
       * @apiDescription Insérer une note associé à un étudiant, un groupe cours et de devoir ou questionnaire
       * @apiVersion 3.0.0
-      
+
       * @apiParam {String} student_id Identifiant de l'étudiant
       * @apiParam {String} group_id Identifiant du groupe
       * @apiParam {String} type Nom de la classe correspondant au type de travail
       * @apiParam {integer} type_id Identifiant du travail
       * @apiParam {number} note Note obtenu pour ce travail
-      
+
       *
       * @apiSuccess (200) {JSON}  data
       [
@@ -83,8 +83,8 @@ export class GradeRouter {
       ]
       */
       this.router.get('/insert', this.insert.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-      
-      
+
+
       /**
       * @api {get} /api/v3/grade/student student
       * @apiGroup Grade
@@ -92,7 +92,7 @@ export class GradeRouter {
       * @apiVersion 3.0.0
       *
       * @apiParam {String} student_id Identifiant de l'étudiant
-      
+
       * @apiSuccess (200) {JSON}  data
       [
         {
@@ -105,7 +105,7 @@ export class GradeRouter {
       ]
       */
       this.router.get('/student', this.student.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-      
+
       /**
       * @api {get} /api/v3/grade/group group
       * @apiGroup Grade
@@ -113,7 +113,7 @@ export class GradeRouter {
       * @apiVersion 3.0.0
       *
       * @apiParam {String} group_id Identifiant du groupe
-      
+
       * @apiSuccess (200) {JSON}  data
       [
         {
@@ -126,11 +126,10 @@ export class GradeRouter {
       ]
       */
       this.router.get('/group', this.group.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-      
+
     }
   }
-  
+
   // exporter its configured Express.Router
   export const gradeRouter = new GradeRouter();
   gradeRouter.init();
-  

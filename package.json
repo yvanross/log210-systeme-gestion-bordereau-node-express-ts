@@ -12,12 +12,12 @@
         "docs": "apidoc -i src/routes/ -o dist/docs/",
         "tplant": "tplant --input src/App.ts  -A --output dist/docs/dcl.svg",
         "circular": "madge src/App.ts -c",
-        "madge": "madge src/App.ts -i madge.png",
+        "madge": "madge src/App.ts -i docs/madge.png",
         "precompile": "npm run clean",
         "clean": "rimraf dist/* & npm run docs & npm run tplant",
         "compile": "npm run compile:ts",
-        "compile:ts": "tsc --outDir ./dist --module commonjs --downlevelIteration ./src/index.ts",
-        "postcompile": "cp -R src/data dist/data && cp src/model/model/MDD.svg dist/docs & npm run madge & cp madge.png dist/docs"
+        "compile:ts": "tsc && tsc -p tests",
+        "postcompile": "cp src/model/model/MDD.svg dist/docs & npm run madge & cp docs/madge.png dist/docs"
     },
     "watch": {
         "test": "{src,tests}/*.js"
@@ -28,6 +28,7 @@
     "devDependencies": {
         "@types/chai": "^4.2.21",
         "@types/debug": "^4.1.7",
+        "@types/express": "^4.17.13",
         "@types/jest": "^27.0.1",
         "@types/md5": "^2.3.1",
         "@types/morgan": "^1.9.3",
@@ -48,7 +49,6 @@
         "testdouble-chai": "^0.5.0",
         "ts-jest": "^27.0.5",
         "ts-mockito": "^2.6.1",
-        "ts-node": "^10.2.1",
         "typescript": "^4.4.3"
     },
     "dependencies": {

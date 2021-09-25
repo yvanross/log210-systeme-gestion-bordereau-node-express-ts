@@ -1,7 +1,6 @@
 import md5 = require('md5');
 import { Schedule } from './Schedule';
-import { GroupStudentJSON } from '.';
-import {validUserJSON, StudentJSON} from '.'
+import { GroupStudentJSON, validUserJSON, StudentJSON } from '.'
 
 export class Student{
 
@@ -27,13 +26,11 @@ export class Student{
     }
     return students;
   }
-  
+
   static groupStudent(): GroupStudentJSON[] {
     let students = Student.all();
     let groups = Schedule.groups();
-    let nbStudentByGroup = students.length / groups.length;
 
-    nbStudentByGroup = Math.round(nbStudentByGroup);
     let groupStudentArray: GroupStudentJSON[] = [];
     for (let iStudent = 0; iStudent < students.length; iStudent++){
       let igroup = iStudent % groups.length;

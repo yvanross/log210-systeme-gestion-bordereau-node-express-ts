@@ -1,17 +1,15 @@
-import chai from 'chai';
-import chaiHttp from 'chai-http';
-import md5 from 'md5';
-import { Student } from '../src/model/Student';
+// import chai from 'chai';
+// import chaiHttp from 'chai-http';
+// import md5 from 'md5';
+// import { Student } from '../src/model/Student';
 
-chai.use(chaiHttp);
-const expect = chai.expect;
+// chai.use(chaiHttp);
+// const expect = chai.expect;
 
 describe('StudentTest', () => {
 
-  it('true', () => {
-    expect(true).to.be.true
-  });
-  
+  it("true", () => {})
+
   // it('fail to get student by id', () => {
   //   expect(() => { Student.fromId("0"); }).to.throw('Student id not found');
   //   // expect(new Student(1)).to.throw(ex);

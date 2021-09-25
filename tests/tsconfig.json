@@ -2,13 +2,13 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "outDir": "dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "downlevelIteration": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "noEmit": true
   },
   "include": [
-    "src"
+    "."
   ]
 }

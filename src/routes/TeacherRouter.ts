@@ -5,7 +5,7 @@ export class TeacherRouter {
   router: Router;
   controller: TeacherController;  // contrôleur GRASP
   router_latency: number;
-  
+
   /**
   * Initialize the Router
   */
@@ -15,7 +15,7 @@ export class TeacherRouter {
     this.router = Router();
     this.init();
   }
-  
+
   public login(req: Request, res: Response, next: NextFunction) {
     try {
       // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
@@ -35,7 +35,7 @@ export class TeacherRouter {
         res.status(code).json({ error: error.toString() });
       }
     }
-    
+
     public all(req: Request, res: Response, next: NextFunction) {
       let data = this.controller.all()
       res.status(200)
@@ -45,11 +45,11 @@ export class TeacherRouter {
         data: data
       });
     }
-    
+
     public fromtoken(req: Request, res: Response, next: NextFunction) {
       try {
-        let token:string = req.query.token;
-        
+        let token = req.query.token as string;
+
         let data = this.controller.fromToken(token);
         res.status(200)
         .send({
@@ -63,16 +63,16 @@ export class TeacherRouter {
         res.status(code).json({ error: error.toString() });
       }
     }
-    
-    
+
+
     //apidoc -i src/routes/ -o docs/
-    
+
     /**
     * Take each handler, and attach to one of the Express.Router's
     * endpoints.
     */
     init() {
-      
+
       /**
       * @api {get} /api/v3/teacher/login login
       * @apiGroup Teacher
@@ -86,11 +86,11 @@ export class TeacherRouter {
       * @apiSuccess (200) {JSON}  user {
       *   first_name:string,
       *   last_name: string,
-      *   id: string 
+      *   id: string
       * }
       */
       this.router.get('/login', this.login.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-      
+
       /**
       * @api {get}/api/v3/teacher/all all
       * @apiGroup Teacher
@@ -99,12 +99,12 @@ export class TeacherRouter {
       * @apiSuccess (200) {JSON} user [{
       *   first_name: string,
       *   last_name: string,
-      *   id: string 
+      *   id: string
       * }]
       */
       this.router.get('/all', this.all.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
-      
-      
+
+
       /**
       * @api {get} /api/v3/teacher/fromtoken fromtoken
       * @apiGroup Teacher
@@ -113,7 +113,7 @@ export class TeacherRouter {
       *
       * @apiParam {String} token Authentification token
       *
-      * @apiSuccess (200) {JSON} data { 
+      * @apiSuccess (200) {JSON} data {
       *   first_name: string,
       *   last_name: string,
       *   id: string,
@@ -122,9 +122,8 @@ export class TeacherRouter {
       this.router.get('/fromtoken', this.fromtoken.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
     }
   }
-  
-  
+
+
   // exporter its configured Expres.Router
   export const teacherRouter = new TeacherRouter();
   teacherRouter.init();
-  

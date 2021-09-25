@@ -1,9 +1,7 @@
 import type { CourseJSON } from ".";
 
 export class Course {
-  static all() {
-    let courses: CourseJSON[] = require('../data/courses.json');
-    return courses;
-  }  
+  static all(): CourseJSON[] {
+    return require('../../data/courses.json');
+  }
 }
- 

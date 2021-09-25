@@ -2,11 +2,8 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../src/App';
 
-
-
 chai.use(chaiHttp);
 const expect = chai.expect;
-const should = chai.should();
 
 describe("HealtRouterTest", () => {
 

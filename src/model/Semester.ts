@@ -1,9 +1,7 @@
 import type { SemesterJSON } from ".";
 
 export class Semester {
-  static all() {
-    let courses: SemesterJSON[] = require('../data/semester.json');
-    return courses;
-  }  
+  static all(): SemesterJSON[] {
+    return require('../../data/semester.json');
+  }
 }
- 

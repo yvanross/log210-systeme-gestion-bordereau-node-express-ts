@@ -7,44 +7,16 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Mocha Current File",
-      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "name": "Jest Current File",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": [
-        "--no-timeouts",
-        "--colors",
-        "${file}",
-        "--require",
-        "ts-node/register"
+        "${relativeFile}"
       ],
       "console": "integratedTerminal",
-      "sourceMaps": true,
-      "internalConsoleOptions": "neverOpen"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Jasmine Current File",
-      "program": "${workspaceFolder}/node_modules/jasmine/bin/jasmine",
-      "args": [
-        "${workspaceFolder}/TSOutput/tests/${fileBasenameNoExtension}.js"
-      ],
-      "preLaunchTask": "tsc: build - tsconfig.json",     
-      "outFiles": ["${workspaceFolder}/TSOutput/**/*.js"],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
-},
-{
-  "type": "node",
-  "request": "launch",
-  "name": "Jest Current File",
-  "program": "${workspaceFolder}/node_modules/.bin/jest",
-  "args": ["${relativeFile}"],
-  "console": "integratedTerminal",
-  "internalConsoleOptions": "neverOpen",
-  "windows": {
-    "program": "${workspaceFolder}/node_modules/jest/bin/jest"
-  }
-}
-
+      "internalConsoleOptions": "neverOpen",
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+      }
+    }
   ]
 }

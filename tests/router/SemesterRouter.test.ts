@@ -1,11 +1,12 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../src/App';
-import type { SemesterJSON } from '../../src/model';
+import { SemesterJSON } from '../../src/model'
+
+const SEMESTER_DATA: SemesterJSON[] = require('../../data/semester.json')
 
 chai.use(chaiHttp);
 const expect = chai.expect;
-const should = chai.should();
 
 describe("SemesterRouterTest", () => {
 
@@ -13,9 +14,8 @@ describe("SemesterRouterTest", () => {
         const res = await chai.request(app).get('/api/v3/semester/all')
         expect(res.status).to.equal(200);
         expect(res).to.be.json;
-        
-        let semesters: SemesterJSON[] = require('../../src/data/semester.json');
-        expect(res.body.data).to.deep.equal(semesters);
+
+        expect(res.body.data).to.deep.equal(SEMESTER_DATA);
       }, 10000);
 
 });

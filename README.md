@@ -1,9 +1,9 @@
-# Système de gestion des bordereau 
+# Système de gestion des bordereau
 Application utilisée dans le cadre du cours de LOG210 et développée avec Node, Express et TypeScript
 
 ## Diagramme de classe (généré par tplant)
 
-![dcl](dist/docs/dcl.svg)
+![dcl](docs/dcl.svg)
 
 Ce système doit être utilisé pour obtenir l'information de base à la réalisation de votre laboratoire en LOG210. Il possède les qualités suivantes:
 
@@ -11,7 +11,7 @@ Ce système doit être utilisé pour obtenir l'information de base à la réalis
    - il n'y a pas de framework pour le front-end ni pour la persistance, mais ça n'empêche pas d'ajouter ces dimensions.
    - il est seulement [REST niveau 1](https://restfulapi.net/richardson-maturity-model/#level-one), mais ça n'empêche pas de modifier l'API pour qu'il soit [REST niveau 3](https://restfulapi.net/richardson-maturity-model/#level-three).
  - il est orienté objet (avec TypeScript)
- - il contient des tests pour l'API (avec Mocha)
+ - il contient des tests pour l'API (avec Jest)
  - il fait une séparation entre les couches présentation et domaine, selon la méthodologie de conception du cours LOG210 (Larman)
 
 ## Voulez-vous utiliser ce serveur?
@@ -36,4 +36,3 @@ voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0
 6. Générer la documentation - ```npm run docs ou npm run compile```
  http://127.0.0.1:3200/docs/index
  http://localhost:3200/docs/index
-

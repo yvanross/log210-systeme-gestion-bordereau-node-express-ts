@@ -4,7 +4,7 @@ import  { TeacherJSON } from '.';
 export class Teacher  {
 
   static login(email: string, password: string) {
-    const teachers: TeacherJSON[] = require('../data/teachers.json');
+    const teachers: TeacherJSON[] = Teacher.all();
     const teacher = teachers.find(teacher => email == teacher.id);
     return teacher ? { token: md5(email), user: teacher } : null;
   }
@@ -18,9 +18,8 @@ export class Teacher  {
 
     return teacher;
   }
- 
-  static all() {
-    let teachers: TeacherJSON[] = require('../data/teachers.json');
-    return teachers;
+
+  static all(): TeacherJSON[]{
+    return require('../../data/teachers.json');
   }
 }

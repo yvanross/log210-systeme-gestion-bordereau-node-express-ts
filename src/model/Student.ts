@@ -1,6 +1,6 @@
 import md5 = require('md5');
 import { Schedule } from './Schedule';
-import { GroupStudentJSON, validUserJSON, StudentJSON } from '.'
+import type { GroupStudentJSON, validUserJSON, StudentJSON } from './json-types'
 
 export class Student{
 

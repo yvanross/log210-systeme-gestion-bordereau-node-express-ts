@@ -1,5 +1,5 @@
 
-import type { ScheduleJSON } from "../model";
+import type { ScheduleJSON } from "../model/json-types";
 import { Schedule } from '../model/Schedule';
 
 // classe contrôleur de GRASP

@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import { ScheduleJSON } from '../../src/model';
+import type { ScheduleJSON } from '../../src/model/json-types';
 import { Schedule } from '../../src/model/Schedule';
 
 chai.use(chaiHttp);

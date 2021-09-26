@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../src/App';
-import { SemesterJSON } from '../../src/model'
+import { SemesterJSON } from '../../src/model/json-types'
 
 const SEMESTER_DATA: SemesterJSON[] = require('../../data/semester.json')
 

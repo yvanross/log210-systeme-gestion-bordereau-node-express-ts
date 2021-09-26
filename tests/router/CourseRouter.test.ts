@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../src/App';
-import type { CourseJSON } from '../../src/model';
+import type { CourseJSON } from '../../src/model/json-types';
 
 const COURSE_DATA: CourseJSON[] = require("../../data/courses.json")
 

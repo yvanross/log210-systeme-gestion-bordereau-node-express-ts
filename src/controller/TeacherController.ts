@@ -1,5 +1,5 @@
 import { Teacher } from '../model/Teacher';
-import type { TeacherJSON } from '../model';
+import type { TeacherJSON } from '../model/json-types';
 
 // classe contrôleur GRASP
 export class TeacherController {
@@ -20,7 +20,7 @@ export class TeacherController {
     public fromToken(token: string) {
       return Teacher.fromToken(token);
     }
-  
+
 
     public all():TeacherJSON[] {
       return Teacher.all()

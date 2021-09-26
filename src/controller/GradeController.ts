@@ -1,5 +1,5 @@
 import { Grade } from '../model/Grade';
-import { GradeJSON} from '../model';
+import type { GradeJSON} from '../model/json-types';
 
 
 // import type { GradeJSON } from "../data";
@@ -13,7 +13,7 @@ export class GradeController {
     public insert(student_id: string, group_id: string, type: string, type_id: number, note: number): string {
       return Grade.getInstance().insert(student_id, group_id, type, type_id, note);
     }
-  
+
   public group(group_id: string) : GradeJSON[] {
     return Grade.getInstance().group(group_id);
   }

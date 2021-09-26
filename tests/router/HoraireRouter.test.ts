@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../src/App';
-import type { ScheduleJSON } from '../../src/model';
+import type { ScheduleJSON } from '../../src/model/json-types';
 
 const SCHEDULE_DATA: ScheduleJSON[] = require('../../data/Schedule.json')
 

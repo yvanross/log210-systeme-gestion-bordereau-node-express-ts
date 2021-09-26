@@ -1,5 +1,5 @@
 
-import type { SemesterJSON } from "../model";
+import type { SemesterJSON } from "../model/json-types";
 import { Semester } from '../model/Semester';
 
 // classe contrôleur GRASP

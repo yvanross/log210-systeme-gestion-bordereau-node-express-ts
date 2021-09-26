@@ -2,24 +2,24 @@
 //   id: string;
 // }
 
-
-interface GroupStudentJSON{
+export interface GroupStudentJSON{
   group_id: string;
   student_id: string;
 }
 
-interface SemesterJSON  {
+export interface SemesterJSON  {
   name: string;
   start: string;
   end: string;
 }
-interface UserJSON  {
+
+export interface UserJSON  {
   first_name: string;
   last_name: string;
   id: string;
 }
 
-interface validUserJSON  {
+export interface validUserJSON  {
   token: string;
   user: {
     first_name: string;
@@ -48,7 +48,7 @@ export interface StudentJSON extends UserJSON {
 }
 
 export interface TeacherJSON extends UserJSON {
-  
+
 }
 
 export interface GradeJSON {
@@ -58,5 +58,3 @@ export interface GradeJSON {
   type_id: number;
   note: number;
 }
-
-

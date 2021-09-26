@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import { SemesterJSON } from '../../src/model';
+import { SemesterJSON } from '../../src/model/json-types';
 import { Semester } from '../../src/model/Semester';
 
 chai.use(chaiHttp);

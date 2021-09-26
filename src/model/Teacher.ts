@@ -1,5 +1,5 @@
 import md5 = require('md5');
-import  { TeacherJSON } from '.';
+import type { TeacherJSON } from './json-types';
 
 export class Teacher  {
 

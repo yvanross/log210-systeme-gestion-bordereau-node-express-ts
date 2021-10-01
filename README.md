@@ -33,7 +33,11 @@ voir https://medium.com/@RupaniChirag/writing-unit-tests-in-typescript-d4719b8a0
   - docker run -p 3200:3200 sgb
 
 ## définition de l'API
-6. Générer la documentation - ```npm run docs ou npm run compile```
+```
+npm run compile #Générer la documentation 
+npm start 
+```
+Ouvrir votre navigateur à l'url suivant s'il n'ouvre pas automatiquement
  http://127.0.0.1:3200/docs/index
  http://localhost:3200/docs/index
 

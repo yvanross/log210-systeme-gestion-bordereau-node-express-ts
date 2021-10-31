@@ -1,3 +1,4 @@
+import { log } from 'debug';
 import { Router, Request, Response, NextFunction } from 'express';
 import { GradeController } from '../controller/GradeController';
 
@@ -17,19 +18,13 @@ export class GradeRouter {
   }
   
   public insert(req: Request, res: Response, next: NextFunction) {
-    let data = this.controller.insert(
-      req.query.student_id as string,
-      req.query.group_id as string,
-      req.query.type as string,
-      req.query.type_id as number,
-      req.query.note as number)
-    
+      let data = this.controller.insert(req.query);
       res.status(200)
-      .send({
-        message: 'Success',
-        status: res.status,
-        data: data
-      });
+        .send({
+          message: 'Success',
+          status: res.status,
+          data: data
+        });    
     }
     
     public student(req: Request, res: Response, next: NextFunction) {

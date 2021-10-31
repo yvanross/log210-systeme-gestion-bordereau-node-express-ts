@@ -15,9 +15,16 @@ export class Grade {
   
   private constructor() { }
   
-  public insert(student_id: string, group_id: string, type: string, type_id: number, note: number) : string{
-    let result = Grade.multimap.set(student_id, { "student_id": student_id, "group_id": group_id, "type": type, "type_id": type_id, "note": note });
-    return student_id;
+  public insert(query:any): string{
+  let result = Grade.multimap.set(
+    query.student_id, {
+      "student_id": query.student_id as string,
+      "group_id": query.group_id as string,
+      "type": query.type as string,
+      "type_id": query.type_id,
+      "note": query.note as number
+  });
+    return query.student_id;
 
   }
   

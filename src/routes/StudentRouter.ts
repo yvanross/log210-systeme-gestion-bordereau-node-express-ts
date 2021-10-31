@@ -28,6 +28,7 @@ export class StudentRouter {
           user: data.user
         });
       } catch (error) {
+        console.error(error);
         let code = 500; // internal server error
         res.status(code).json({ error: error.toString() });
       }
@@ -59,21 +60,22 @@ export class StudentRouter {
           user: data
         });
       } catch (error) {
+        console.log(error);
         let code = 500; // internal server error
         res.status(code).json({ error: error.toString() });
       }
     }
     
     public groupstudent(req: Request, res: Response, next: NextFunction) {
-        let data = this.controller.groupStudent();
-        res.status(200)
-        .send({
-          message: 'Success',
-          status: res.status,
-          data: data
-        });
+      let data = this.controller.groupStudent();
+      res.status(200)
+      .send({
+        message: 'Success',
+        status: res.status,
+        data: data
+      });
     }
-  
+    
     //apidoc -i src/routes/ -o docs/
     
     /**

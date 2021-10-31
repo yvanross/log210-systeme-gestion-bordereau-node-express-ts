@@ -55,7 +55,7 @@ export interface GradeJSON {
   student_id: string;
   group_id: string;
   type: string;
-  type_id: integer;
+  type_id: number;
   note: number;
 }
 

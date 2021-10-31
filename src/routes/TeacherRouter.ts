@@ -30,6 +30,7 @@ export class TeacherRouter {
           user: data.user
         });
       } catch (error) {
+        console.error(error);
         let code = 500; // internal server error
         res.status(code).json({ error: error.toString() });
       }
@@ -57,6 +58,7 @@ export class TeacherRouter {
           user: data
         });
       } catch (error) {
+        console.error(error);
         let code = 500; // internal server error
         res.status(code).json({ error: error.toString() });
       }

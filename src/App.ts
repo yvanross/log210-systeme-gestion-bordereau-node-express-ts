@@ -49,8 +49,6 @@ class App {
     });
 
     router.get('/', function (req, res) {
-      console.log("XXXXX");
-      console.log(path.join(__dirname, 'public'));
       res.redirect('docs/index.html');
     });
 

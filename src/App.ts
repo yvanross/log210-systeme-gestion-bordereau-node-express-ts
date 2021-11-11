@@ -1,5 +1,6 @@
 import express = require('express');
 import logger = require('morgan');
+const path = require('path')
 
 import { courseRouter } from './routes/CourseRouter';
 import { scheduleRouter } from './routes/ScheduleRouter';
@@ -33,6 +34,7 @@ class App {
 
   // Configure API endpoints.
   private routes(): void {
+
     /* This function will change when we start to add more
      * API endpoints */
     let router = express.Router();
@@ -42,11 +44,14 @@ class App {
          * @apiGroup Documentation
          * @apiDescription  Afficher le diagramme de classe
          */
-    // router.get('/dcl', function (req, res) {
-    //   res.redirect('/docs/dcl.svg');
-    // })
+    router.get('/dcl2', function (req, res) {
+      res.redirect('/docs/dcl.svg');
+    });
+
     router.get('/', function (req, res) {
-      res.redirect('/docs/index.html');
+      console.log("XXXXX");
+      console.log(path.join(__dirname, 'public'));
+      res.redirect('docs/index.html');
     });
 
     this.express.use('/api/v3/healt', healtRouter.router);
@@ -56,9 +61,11 @@ class App {
     this.express.use('/api/v3/student',studentRouter.router)
     this.express.use('/api/v3/teacher', teacherRouter.router)
     this.express.use('/api/v3/grade',gradeRouter.router)
-    this.express.use('/docs', express.static('dist/docs'));
-    this.express.use('/dcl', express.static('dist/docs/dcl.svg'));
+    this.express.use('/docs', express.static(path.join(__dirname,'docs')));
+    this.express.use('/dcl', express.static(path.join(__dirname,'docs/dcl.svg')));
+    this.express.use('/static', express.static(path.join(__dirname, 'public')));
     this.express.use('/', router);  // routage de base
+
 
   }
 }

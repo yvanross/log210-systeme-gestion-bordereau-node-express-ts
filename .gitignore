@@ -2,4 +2,9 @@
 node_modules
 .nyc_output
 coverage
-dist/
+dist/controller
+dist/model 
+dist/routes 
+dist/App.js 
+dist/index.js 
+

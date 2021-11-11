@@ -4,20 +4,21 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start2": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js & open http://localhost:3200",
-        "start": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js & open http://127.0.0.1:3200",
-        "start-docker": "apidoc -i src/routes/ -o dist/docs/ & node dist/index.js",
+        "startWithDoc": "npm run compile && npm run all_docs && node dist/index.js",
+        "start": "npm run compile && node dist/index.js",
+        "start-docker": "apidoc -i src/routes/ -o dist/docs/ && node dist/index.js",
         "test": "jest --coverage",
         "watch": "jest --coverage --watchAll",
-        "docs": "apidoc -i src/routes/ -o dist/docs/ && cp src/model/model/MDD.svg dist/docs",
-        "tplant": "tplant --input src/App.ts  -A --output dist/docs/dcl.svg",
+        "all_docs": "npm run docs && npm run madge && npm run tplant",
+        "docs": "apidoc -i src/routes/ -o dist/docs ",
         "circular": "madge src/App.ts -c",
-        "madge": "madge src/App.ts -i madge.png",
+        "madge": "madge src/App.ts -i madge.png && cp madge.png dist/docs/",
+        "tplant": "tplant --input src/App.ts  -A --output dist/docs/dcl.svg && cp src/model/model/MDD.svg dist/docs/",
         "precompile": "npm run clean",
-        "clean": "rimraf dist/*",
+        "clean": "rimraf dist/controller && rimraf dist/model && rimraf dist/routes && rimraf dist/App.js && rimraf dist/index.js",
         "compile": "npm run compile:ts",
         "compile:ts": "tsc --outDir ./dist --module commonjs --downlevelIteration ./src/index.ts",
-        "postcompile": "cp -R src/data dist/data && cp src/model/model/MDD.svg dist/docs & cp madge.png dist/docs"
+        "postcompile": "cp -R src/data dist/data"
     },
     "watch": {
         "test": "{src,tests}/*.js"

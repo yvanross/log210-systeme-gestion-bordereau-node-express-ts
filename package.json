@@ -17,8 +17,8 @@
         "precompile": "npm run clean",
         "clean": "rimraf dist/controller && rimraf dist/model && rimraf dist/routes && rimraf dist/App.js && rimraf dist/index.js",
         "compile": "npm run compile:ts",
-        "compile:ts": "tsc --outDir ./dist --module commonjs --downlevelIteration ./src/index.ts"
-        // "postcompile": "cp -R src/data dist/data"
+        "compile:ts": "tsc --outDir ./dist --module commonjs --downlevelIteration ./src/index.ts",
+         "copydata": "cp -R src/data dist/data"
     },
     "watch": {
         "test": "{src,tests}/*.js"

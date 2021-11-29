@@ -10,8 +10,8 @@ export class GradeController {
     /**
     *  opérations systèmes
     */
-    public insert(student_id: string, group_id: string, type: string, type_id: number, note: number): string {
-      return Grade.getInstance().insert(student_id, group_id, type, type_id, note);
+  public insert(query: any): string {
+      return Grade.getInstance().insert(query);
     }
   
   public group(group_id: string) : GradeJSON[] {

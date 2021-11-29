@@ -7,12 +7,12 @@ const expect = chai.expect;
 
 describe('CourseControllerTest', () => {
   
-  it('insert grade', () => {
+  it('CourseControllerTest insert grade', () => {
     let controller: GradeController = new GradeController();
-    controller.insert("first_name.last_name+1@gmail.com", "S20213-LOG210-01", "devoir1", 1, 75.1)
-    controller.insert("first_name.last_name+1@gmail.com", "S20213-LOG210-01","devoir2",1,75.2)
-    controller.insert("first_name.last_name+1@gmail.com", "S20213-LOG210-02","devoir2",1,75.3)
-    controller.insert("first_name.last_name+2@gmail.com", "S20213-LOG210-03","devoir2",1,75.4)
+    controller.insert({"student_id":"first_name.last_name+1@gmail.com", "group_id":"S20213-LOG210-01","type":"devoir1","type_id":1,"note":75.1})
+    controller.insert({"student_id":"first_name.last_name+1@gmail.com", "group_id":"S20213-LOG210-01","type":"devoir2","type_id":1,"note":75.2})
+    controller.insert({"student_id":"first_name.last_name+1@gmail.com", "group_id":"S20213-LOG210-02","type":"devoir2","type_id":1,"note":75.3})
+    controller.insert({"student_id":"first_name.last_name+2@gmail.com", "group_id":"S20213-LOG210-03","type":"devoir2","type_id":1,"note":75.4})
   
     let grades = controller.group("S20213-LOG210-01");
     expect(grades.length).to.equal(2);

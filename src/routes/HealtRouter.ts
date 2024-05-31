@@ -33,7 +33,7 @@ export class HealtRouter {
     * endpoints.
     * @api {get} /api/v3/healt/ping ping
     * @apiGroup Healt
-    * @apiDescription Echo pour confirmer le fonctionnement de SGB
+    * @apiDescription Écho pour confirmer le fonctionnement du SGB.
     * @apiVersion 3.0.0
     *
     * @apiSuccess (200) Success

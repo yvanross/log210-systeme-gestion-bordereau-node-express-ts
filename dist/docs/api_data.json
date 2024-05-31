@@ -4,7 +4,7 @@
     "url": "/api/v3/course/all",
     "title": "all",
     "group": "Cours",
-    "description": "<p>Récupérer la liste de tous les cours</p>",
+    "description": "<p>Récupérer la liste de tous les cours.</p>",
     "version": "3.0.0",
     "success": {
       "fields": {
@@ -28,7 +28,7 @@
     "url": "/api/v3/grade/group",
     "title": "group",
     "group": "Grade",
-    "description": "<p>Liste des notes d'un groupe</p>",
+    "description": "<p>Liste des notes d'un groupe.</p>",
     "version": "3.0.0",
     "parameter": {
       "fields": {
@@ -38,7 +38,7 @@
             "type": "String",
             "optional": false,
             "field": "group_id",
-            "description": "<p>Identifiant du groupe</p>"
+            "description": "<p>Identifiant du groupe.</p>"
           }
         ]
       }
@@ -65,7 +65,7 @@
     "url": "/api/v3/grade/insert",
     "title": "insert",
     "group": "Grade",
-    "description": "<p>Insérer une note associé à un étudiant, un groupe cours et de devoir ou questionnaire</p>",
+    "description": "<p>Insérer une note associée à un étudiant, un groupe cours et un devoir ou un questionnaire.</p>",
     "version": "3.0.0",
     "parameter": {
       "fields": {
@@ -75,35 +75,35 @@
             "type": "String",
             "optional": false,
             "field": "student_id",
-            "description": "<p>Identifiant de l'étudiant</p>"
+            "description": "<p>Identifiant de l'étudiant.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "group_id",
-            "description": "<p>Identifiant du groupe</p>"
+            "description": "<p>Identifiant du groupe.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "type",
-            "description": "<p>Nom de la classe correspondant au type de travail</p>"
+            "description": "<p>Nom de la classe correspondant au type de travail.</p>"
           },
           {
             "group": "Parameter",
             "type": "integer",
             "optional": false,
             "field": "type_id",
-            "description": "<p>Identifiant du travail</p>"
+            "description": "<p>Identifiant du travail.</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
             "field": "note",
-            "description": "<p>Note obtenu pour ce travail</p>"
+            "description": "<p>Note obtenue pour ce travail.</p>"
           }
         ]
       }
@@ -130,7 +130,7 @@
     "url": "/api/v3/grade/student",
     "title": "student",
     "group": "Grade",
-    "description": "<p>Liste des notes d'un étudiant</p>",
+    "description": "<p>Liste des notes d'un étudiant.</p>",
     "version": "3.0.0",
     "parameter": {
       "fields": {
@@ -140,7 +140,7 @@
             "type": "String",
             "optional": false,
             "field": "student_id",
-            "description": "<p>Identifiant de l'étudiant</p>"
+            "description": "<p>Identifiant de l'étudiant.</p>"
           }
         ]
       }
@@ -167,7 +167,7 @@
     "url": "/api/v3/healt/ping",
     "title": "ping",
     "group": "Healt",
-    "description": "<p>Echo pour confirmer le fonctionnement de SGB</p>",
+    "description": "<p>Écho pour confirmer le fonctionnement du SGB.</p>",
     "version": "3.0.0",
     "success": {
       "fields": {
@@ -190,7 +190,7 @@
     "url": "/api/v3/Schedule/all",
     "title": "all",
     "group": "Schedule",
-    "description": "<p>Récupérer la liste de tous les Schedules</p>",
+    "description": "<p>Récupérer la liste de tous les horaires des groupes cours.</p>",
     "version": "3.0.0",
     "success": {
       "fields": {
@@ -214,7 +214,7 @@
     "url": "/api/v3/semester/all",
     "title": "all",
     "group": "Semester",
-    "description": "<p>Récupérer la liste de tous les semestres</p>",
+    "description": "<p>Récupérer la liste de tous les semestres.</p>",
     "version": "3.0.0",
     "success": {
       "fields": {
@@ -238,7 +238,7 @@
     "url": "/api/v3/student/all",
     "title": "all",
     "group": "Student",
-    "description": "<p>récupération de tout les enseignant</p>",
+    "description": "<p>Récupérer tous les enseignants.</p>",
     "version": "3.0.0",
     "success": {
       "fields": {
@@ -262,7 +262,7 @@
     "url": "/api/v3/student/fromtoken",
     "title": "fromtoken",
     "group": "Student",
-    "description": "<p>Récupérer un étudiant à partir de son token</p>",
+    "description": "<p>Récupérer un étudiant à partir de son jeton d'authentification.</p>",
     "version": "3.0.0",
     "parameter": {
       "fields": {
@@ -272,7 +272,7 @@
             "type": "String",
             "optional": false,
             "field": "token",
-            "description": "<p>Authentification token</p>"
+            "description": "<p>Jeton d'authentification.</p>"
           }
         ]
       }
@@ -299,7 +299,7 @@
     "url": "/api/v3/student/groupstudent",
     "title": "groupstudent",
     "group": "Student",
-    "description": "<p>Récupérer le lien entre les étudiants et les groupes</p>",
+    "description": "<p>Récupérer le lien entre les étudiants et les groupes.</p>",
     "version": "3.0.0",
     "success": {
       "fields": {
@@ -323,7 +323,7 @@
     "url": "/api/v3/student/login",
     "title": "login",
     "group": "Student",
-    "description": "<p>Authentification de l'étudiant et récupération du token d'authentification</p>",
+    "description": "<p>Authentification de l'étudiant et récupération du jeton d'authentification.</p>",
     "version": "3.0.0",
     "parameter": {
       "fields": {
@@ -333,14 +333,14 @@
             "type": "String",
             "optional": false,
             "field": "email",
-            "description": "<p>courriel de l'étudiant.  Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP</p>"
+            "description": "<p>Courriel de l'étudiant. Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "password",
-            "description": "<p>non vérifier.</p>"
+            "description": "<p>N'est pas vérifié.</p>"
           }
         ]
       }
@@ -360,7 +360,7 @@
             "type": "String",
             "optional": false,
             "field": "token",
-            "description": "<p>Authentification token à inclure dans les requêtes subséquentes</p>"
+            "description": "<p>Jeton d'authentification à inclure dans les requêtes subséquentes.</p>"
           },
           {
             "group": "200",
@@ -381,7 +381,7 @@
     "url": "/api/v3/teacher/all",
     "title": "all",
     "group": "Teacher",
-    "description": "<p>récupération de tout les enseignant</p>",
+    "description": "<p>Récupérer tous les enseignants.</p>",
     "version": "3.0.0",
     "success": {
       "fields": {
@@ -405,7 +405,7 @@
     "url": "/api/v3/teacher/fromtoken",
     "title": "fromtoken",
     "group": "Teacher",
-    "description": "<p>Récupérer un enseignant à partir de son token</p>",
+    "description": "<p>Récupérer un enseignant à partir de son jeton d'authentification.</p>",
     "version": "3.0.0",
     "parameter": {
       "fields": {
@@ -415,7 +415,7 @@
             "type": "String",
             "optional": false,
             "field": "token",
-            "description": "<p>Authentification token</p>"
+            "description": "<p>Jeton d'authentification.</p>"
           }
         ]
       }
@@ -442,7 +442,7 @@
     "url": "/api/v3/teacher/login",
     "title": "login",
     "group": "Teacher",
-    "description": "<p>Authentification de l'usager et récupération du token d'authentification</p>",
+    "description": "<p>Authentification de l'enseignant et récupération du jeton d'authentificationé</p>",
     "version": "3.0.0",
     "parameter": {
       "fields": {
@@ -452,14 +452,14 @@
             "type": "String",
             "optional": false,
             "field": "email",
-            "description": "<p>courriel de l'usager.  Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP</p>"
+            "description": "<p>Courriel de l'enseignant. Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP.</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "password",
-            "description": "<p>non vérifier.</p>"
+            "description": "<p>N'est pas vérifié.</p>"
           }
         ]
       }
@@ -479,7 +479,7 @@
             "type": "String",
             "optional": false,
             "field": "token",
-            "description": "<p>Authentification token à inclure dans les requêtes subséquentes</p>"
+            "description": "<p>Jeton d'authentification à inclure dans les requêtes subséquentes.</p>"
           },
           {
             "group": "200",

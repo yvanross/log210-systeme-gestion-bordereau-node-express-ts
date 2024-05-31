@@ -40,7 +40,7 @@ export class SemesterRouter {
     * endpoints.
     * @api {get} /api/v3/semester/all all
     * @apiGroup Semester
-    * @apiDescription Récupérer la liste de tous les semestres
+    * @apiDescription Récupérer la liste de tous les semestres.
     * @apiVersion 3.0.0
     *
     * @apiSuccess (200) {JSON} data

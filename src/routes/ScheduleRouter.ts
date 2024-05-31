@@ -38,7 +38,7 @@ export class ScheduleRouter {
     /**
     * @api {get} /api/v3/Schedule/all all
     * @apiGroup Schedule
-    * @apiDescription Récupérer la liste de tous les Schedules
+    * @apiDescription Récupérer la liste de tous les horaires des groupes cours.
     * @apiVersion 3.0.0
     *
     * @apiSuccess (200) {JSON}  data

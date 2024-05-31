@@ -76,13 +76,13 @@ export class TeacherRouter {
       /**
       * @api {get} /api/v3/teacher/login login
       * @apiGroup Teacher
-      * @apiDescription Authentification de l'usager et récupération du token d'authentification
+      * @apiDescription Authentification de l'enseignant et récupération du jeton d'authentificationé
       * @apiVersion 3.0.0
-      * @apiParam {String} email courriel de l'usager.  Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP
-      * @apiParam {String} password non vérifier.
+      * @apiParam {String} email Courriel de l'enseignant. Vous devez encoder email avec https://www.w3schools.com/tags/ref_urlencode.ASP.
+      * @apiParam {String} password N'est pas vérifié.
       *
       * @apiSuccess (200) {String}  message Success
-      * @apiSuccess (200) {String}  token Authentification token à inclure dans les requêtes subséquentes
+      * @apiSuccess (200) {String}  token Jeton d'authentification à inclure dans les requêtes subséquentes.
       * @apiSuccess (200) {JSON}  user {
       *   first_name:string,
       *   last_name: string,
@@ -94,7 +94,7 @@ export class TeacherRouter {
       /**
       * @api {get}/api/v3/teacher/all all
       * @apiGroup Teacher
-      * @apiDescription récupération de tout les enseignant
+      * @apiDescription Récupérer tous les enseignants.
       * @apiVersion 3.0.0
       * @apiSuccess (200) {JSON} user [{
       *   first_name: string,
@@ -108,10 +108,10 @@ export class TeacherRouter {
       /**
       * @api {get} /api/v3/teacher/fromtoken fromtoken
       * @apiGroup Teacher
-      * @apiDescription Récupérer un enseignant à partir de son token
+      * @apiDescription Récupérer un enseignant à partir de son jeton d'authentification.
       * @apiVersion 3.0.0
       *
-      * @apiParam {String} token Authentification token
+      * @apiParam {String} token Jeton d'authentification.
       *
       * @apiSuccess (200) {JSON} data { 
       *   first_name: string,

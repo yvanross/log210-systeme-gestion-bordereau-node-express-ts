@@ -36,7 +36,7 @@ export class CourseRouter {
          /**
      * @api {get} /api/v3/course/all all
      * @apiGroup Cours
-     * @apiDescription Récupérer la liste de tous les cours
+     * @apiDescription Récupérer la liste de tous les cours.
      * @apiVersion 3.0.0
      *
      * @apiSuccess (200) {JSON} data

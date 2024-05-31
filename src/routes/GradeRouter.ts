@@ -56,14 +56,14 @@ export class GradeRouter {
       /**
       * @api {get} /api/v3/grade/insert insert
       * @apiGroup Grade
-      * @apiDescription Insérer une note associé à un étudiant, un groupe cours et de devoir ou questionnaire
+      * @apiDescription Insérer une note associée à un étudiant, un groupe cours et un devoir ou un questionnaire.
       * @apiVersion 3.0.0
       
-      * @apiParam {String} student_id Identifiant de l'étudiant
-      * @apiParam {String} group_id Identifiant du groupe
-      * @apiParam {String} type Nom de la classe correspondant au type de travail
-      * @apiParam {integer} type_id Identifiant du travail
-      * @apiParam {number} note Note obtenu pour ce travail
+      * @apiParam {String} student_id Identifiant de l'étudiant.
+      * @apiParam {String} group_id Identifiant du groupe.
+      * @apiParam {String} type Nom de la classe correspondant au type de travail.
+      * @apiParam {integer} type_id Identifiant du travail.
+      * @apiParam {number} note Note obtenue pour ce travail.
       
       *
       * @apiSuccess (200) {JSON}  data
@@ -83,10 +83,10 @@ export class GradeRouter {
       /**
       * @api {get} /api/v3/grade/student student
       * @apiGroup Grade
-      * @apiDescription Liste des notes d'un étudiant
+      * @apiDescription Liste des notes d'un étudiant.
       * @apiVersion 3.0.0
       *
-      * @apiParam {String} student_id Identifiant de l'étudiant
+      * @apiParam {String} student_id Identifiant de l'étudiant.
       
       * @apiSuccess (200) {JSON}  data
       [
@@ -104,10 +104,10 @@ export class GradeRouter {
       /**
       * @api {get} /api/v3/grade/group group
       * @apiGroup Grade
-      * @apiDescription Liste des notes d'un groupe
+      * @apiDescription Liste des notes d'un groupe.
       * @apiVersion 3.0.0
       *
-      * @apiParam {String} group_id Identifiant du groupe
+      * @apiParam {String} group_id Identifiant du groupe.
       
       * @apiSuccess (200) {JSON}  data
       [
